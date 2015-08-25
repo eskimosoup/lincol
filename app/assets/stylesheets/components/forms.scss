@@ -1,0 +1,27 @@
+input[type='reset'],
+input[type='submit'],
+button {
+  border: 0;
+}
+
+input[type='text'],
+textarea {
+  color: $black;
+  font-size: em(14px);
+  padding: em(4px, 14px) em(8px, 14px);
+  letter-spacing: 1px;
+}
+
+.actions .light-submit-button {
+  background: $white;
+  color: $black;
+  display: block;
+  font-size: em(14px);
+  text-transform: uppercase;
+  padding: em(15px, 14px) em(55px, 14px);
+  margin: 0 auto;
+
+  &:hover {
+    background: darken($white, 15%);
+  }
+}

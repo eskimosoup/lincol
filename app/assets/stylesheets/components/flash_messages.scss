@@ -1,0 +1,46 @@
+%flash-heading {
+  font-size: em(16px);
+  color: $white;
+}
+
+// Flash
+.flash-message {
+  border-color: $background-color;
+
+  h2 {
+    @extend %flash-heading;
+  }
+
+  ul {
+    font-weight: normal;
+  }
+
+  &.notice {
+    background: $success;
+  }
+
+  &.error {
+    background: $error;
+    font-weight: bold;
+  }
+
+  &.alert {
+    background: $error;
+    font-weight: bold;
+  }
+}
+
+.error_messages,
+#error_explanation {
+  background: $error;
+  border-color: $background-color;
+  color: $white;
+
+  h2 {
+    @extend %flash-heading;
+  }
+
+  ul {
+    font-weight: normal;
+  }
+}

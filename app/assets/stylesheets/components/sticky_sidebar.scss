@@ -1,0 +1,46 @@
+.sticky-contact {
+  text-align: center;
+  top: 114px;
+  position: fixed;
+  right: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  width: 25%;
+  z-index: 100;
+
+  @media screen and (max-width: 1200px) {
+    width: 50%;
+  }
+
+  a {
+    color: $white;
+    font-size: em(12px);
+    font-weight: $primary-font-semibold;
+    display: block;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $white;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &.transformed {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -40px;
+    width: 114px;
+
+    .sticky-contact-expanded {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.contrast-area {
+  color: $white;
+  padding: em(5px);
+
+  &.border-top {
+    border-top-width: 2px;
+    border-top-style: solid;
+  }
+
+  &.border-bottom {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+  }
+}
+
+footer .contrast-area {
+  padding: em(25px);
+
+  &.border-top {
+    border-top-width: 11px;
+    border-top-style: solid;
+  }
+}

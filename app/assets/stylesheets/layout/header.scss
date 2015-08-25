@@ -1,0 +1,32 @@
+.header-introduction {
+  @extend %clearfix;
+}
+
+
+.tagline {
+  float: left;
+  font-size: em(13px);
+  font-style: italic;
+  font-weight: $primary-font-semibold;
+  letter-spacing: 1px;
+  margin-top: em(23px, 13px);
+
+  span {
+    font-weight: $primary-font-extrabold;
+  }
+}
+
+.call {
+  background: $primary-yellow;
+  float: right;
+  font-weight: $primary-font-semibold;
+  line-height: 1.1;
+  padding: em(9px) em(18px) em(11px);
+  margin-right: em(8px);
+  text-align: right;
+  text-transform: uppercase;
+
+  strong {
+    font-weight: $primary-font-extrabold;
+  }
+}

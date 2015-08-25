@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/shared/head' %>
+  </head>
+
+  <body class='<%= @industry.present? ? @industry.colour : Industry::DEFAULT_COLOUR %>'>
+    <%= render 'layouts/shared/header' %>
+
+    <%= yield %>
+
+    <%= render 'layouts/shared/footer' %>
+  </body>
+</html>

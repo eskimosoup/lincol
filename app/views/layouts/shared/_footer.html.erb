@@ -1,0 +1,64 @@
+<footer>
+  <div class="row collapse content-area">
+    <div class="small-12 columns">
+      <div id="map-canvas" data-latitude="53.611527" data-longitude="-0.176156" data-title="<%= global_site_settings['Name'] %>"></div>
+
+      <div id="map-info-window" class="hide">
+        <div class="maps-info-window-popup">
+          <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row footer-content">
+    <div class="small-6 medium-3 columns content-area">
+      <h6 class="header-color uppercase">Don't hesitate to call us today</h6>
+
+      <p>
+        We are more than happy to discuss any of your oil and lubrication requirements.
+        <%= link_to 'test', '#' %>
+      </p>
+
+      <p class="uppercase">
+        Tel: <strong><%= global_site_settings['Phone'] %></strong>
+      </p>
+    </div>
+
+    <div class="small-6 medium-6 columns">
+      <div class="footer contrast-area border-top">
+        <h6>Contact Us</h6>
+
+        <%= render 'shared/flash_messages', flash: flash %>
+
+        <%= render 'contacts/form' %>
+      </div>
+    </div>
+
+    <div class="small-6 medium-3 columns content-area">
+      <p>
+        <strong class="display-block">Registered Office</strong>
+        <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
+      </p>
+
+      <p class="legal">
+        Company Registration No:<br />
+        189921 Registered in England
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <%= image_tag 'layout/footer/ukla.jpg', alt: 'UKLA' %>
+    </div>
+
+    <div class="small-12 medium-9 columns">
+      <ul class="footer navigation">
+        <%= nested_menu_items(menu_items: @footer_menu.menu_items) %>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<%= yield :footer %>

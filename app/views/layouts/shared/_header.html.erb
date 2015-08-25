@@ -1,0 +1,34 @@
+<div class="sticky-contact contrast-area transformed border-bottom">
+  <%= link_to '#', class: 'toggle-class', data: { container: '.sticky-contact', class: 'transformed', return: 'false' } do %>
+    Contact Us
+  <% end %>
+
+  <div class="sticky-contact-expanded">
+    <%= render 'contacts/form' %>
+  </div>
+</div>
+
+<header class="row collapse content-area">
+  <div class="small-6 medium-2 columns">
+    <%= logo_link(@industry) %>
+  </div>
+
+  <div class="small-12 medium-10 columns">
+    <div class="header-introduction">
+      <div class="tagline">
+        "Supplying commercial oil and lubricants for over <span class="color">100 years</span>"
+      </div>
+
+      <div class="call text-right">
+        <strong class="display-block">Place your order today</strong>
+        <strong>Tel:</strong> <%= global_site_settings['Phone'] %>
+      </div>
+    </div>
+
+    <div class="header-navigation">
+      <ul class="primary navigation">
+        <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
+      </ul>
+    </div>
+  </div>
+</header>
