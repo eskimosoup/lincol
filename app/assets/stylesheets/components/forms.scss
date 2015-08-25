@@ -1,0 +1,13 @@
+input[type='reset'],
+input[type='submit'],
+button {
+  border: 0;
+}
+
+input[type='text'],
+textarea {
+  color: $black;
+  font-size: em(14px);
+  padding: em(4px, 14px) em(8px, 14px);
+  letter-spacing: 1px;
+}

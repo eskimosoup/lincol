@@ -1,0 +1,113 @@
+.yellow {
+  .color {
+    color: $primary-yellow;
+  }
+
+  footer input[type='text'],
+  footer textarea {
+    border: 1px solid $primary-yellow;
+  }
+
+  .header-color {
+    color: $main-default-header-color;
+  }
+
+  .primary.navigation {
+    background-color: $main-navigation-background;
+  }
+
+  .header-navigation {
+    background-image: image-url('components/navigation/yellow-left-angle.png'), image-url('components/navigation/yellow-right-angle.png');
+  }
+
+  .primary.navigation li {
+    background: transparent image-url('components/navigation/yellow-border.png') center right no-repeat;
+
+    &:last-of-type,
+    .dropdown li {
+      background: none;
+    }
+
+    .level-1:hover,
+    ul {
+      background: $main-navigation-hover;
+    }
+  }
+
+  .primary.navigation .dropdown li:hover {
+    background: transparent image-url('components/navigation/yellow-marker.png') center left no-repeat;
+
+    a {
+      border-color: $primary-yellow;
+    }
+  }
+
+  .contrast-area {
+    background: $main-background;
+
+    &.border-top {
+      border-top-color: $primary-yellow;
+    }
+
+    &.border-bottom {
+      border-bottom-color: $primary-yellow;
+    }
+  }
+}
+
+.blue {
+  .color {
+    color: $secondary-default-header-color;
+  }
+
+  footer input[type='text'],
+  footer textarea {
+    border: 1px solid $primary-blue;
+  }
+
+  .header-color {
+    color: $secondary-default-header-color;
+  }
+
+  .primary.navigation {
+    background-color: $secondary-navigation-background;
+  }
+
+  .header-navigation {
+    background-image: image-url('components/navigation/blue-left-angle.png'), image-url('components/navigation/blue-right-angle.png');
+  }
+
+  .primary.navigation li {
+    background: transparent image-url('components/navigation/blue-border.png') center right no-repeat;
+
+    &:last-of-type,
+    .dropdown li {
+      background: none;
+    }
+
+    .level-1:hover,
+    ul {
+      background: $secondary-navigation-hover;
+    }
+  }
+
+  .primary.navigation .dropdown li:hover {
+    background: transparent image-url('components/navigation/blue-marker.png') center left no-repeat;
+
+    a {
+      border-color: $primary-blue;
+    }
+  }
+
+  .contrast-area {
+    background: $secondary-background;
+
+    &.border-top {
+      border-top-color: $primary-blue
+    }
+
+    &.border-bottom {
+      border-bottom-color: $primary-blue
+    }
+  }
+}

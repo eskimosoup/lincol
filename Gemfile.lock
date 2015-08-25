@@ -65,6 +65,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
+    bcrypt (3.1.10)
     bcrypt (3.1.10-x86-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -99,6 +100,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    ffi (1.9.10)
     ffi (1.9.10-x86-mingw32)
     formatador (0.2.5)
     globalid (0.3.6)
@@ -152,6 +154,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    libv8 (3.16.14.11)
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -173,12 +176,19 @@ GEM
     multi_json (1.11.2)
     multipart-post (2.0.0)
     nenv (0.2.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     nokogiri (1.6.6.2-x86-mingw32)
       mini_portile (~> 0.6.0)
     notiffany (0.0.7)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pg (0.18.2)
     pg (0.18.2-x86-mingw32)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     pry (0.10.1-x86-mingw32)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -219,6 +229,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
+    ref (2.0.0)
     retriable (1.4.1)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
@@ -267,6 +278,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -288,6 +302,7 @@ GEM
       thread_safe
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -306,6 +321,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
+  therubyracer
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

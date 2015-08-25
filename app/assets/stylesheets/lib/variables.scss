@@ -3,13 +3,23 @@ $primary-font-semibold: 600;
 $primary-font-bold: 700;
 $primary-font-extrabold: 800;
 
+$black: #000;
+$white: #fff;
+$grey: #c1c2c5;
+
 $background-color: #f0f6ff;
-$content-background-color: #f9fbff;
+$content-background-color: #fff;
 
 $primary-yellow: #fefa02;
-$main-default-text-color: #000000;
+$main-default-text-color: #000;
 $main-default-header-color: $main-default-text-color;
+$main-background: #000;
+$main-navigation-background: $main-background;
+$main-navigation-hover: #626262;
 
 $primary-blue: #00b9e5;
 $secondary-default-text-color: $main-default-text-color;
 $secondary-default-header-color: #0d418c;
+$secondary-background: #1a2b44;
+$secondary-navigation-background: $secondary-background;
+$secondary-navigation-hover: #002496;

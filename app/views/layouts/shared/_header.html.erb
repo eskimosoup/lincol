@@ -1,6 +1,24 @@
-<header class="row content-area">
-  <div class="small-6 medium-3 columns">
-    <%= image_tag 'logo-yellow.png' %>
-    <%= link_to (image_tag 'layout/header/logo-yellow.png', alt: global_site_settings['Name']), root_url, title: global_site_settings['Name'] %>
+<header class="row collapse content-area">
+  <div class="small-6 medium-2 columns">
+    <%= logo_link(@industry) %>
+  </div>
+
+  <div class="small-12 medium-10 columns">
+    <div class="header-introduction">
+      <div class="tagline">
+        "Supplying commercial oil and lubricants for over <span class="color">100 years</span>"
+      </div>
+
+      <div class="call text-right">
+        <strong class="display-block">Place your order today</strong>
+        <strong>Tel:</strong> <%= global_site_settings['Phone'] %>
+      </div>
+    </div>
+
+    <div class="header-navigation">
+      <ul class="primary navigation">
+        <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
+      </ul>
+    </div>
   </div>
 </header>

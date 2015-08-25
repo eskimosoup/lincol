@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require components/google_maps
 //= require vendor/foundation/foundation
 // require_tree .
 

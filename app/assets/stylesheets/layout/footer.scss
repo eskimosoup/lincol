@@ -1,0 +1,70 @@
+footer {
+  margin: em(60px) 0 em(23px);
+
+  .footer-content {
+    background: $white;
+    margin: 0 auto em(23px);
+  }
+
+  input[type='reset'],
+  input[type='submit'],
+  button {
+    background: $white;
+    color: $black;
+    display: block;
+    font-size: em(11px);
+    text-transform: uppercase;
+    padding: em(15px, 11px) em(55px, 11px);
+    margin: 0 auto;
+
+    &:hover {
+      background: darken($white, 15%);
+    }
+  }
+
+  input[type='text'],
+  textarea {
+    @include placeholder {
+      text-transform: uppercase;
+    }
+  }
+
+  textarea {
+    min-height: 152px;
+  }
+}
+
+.footer-content .contrast-area {
+  position: relative;
+  top: -60px;
+
+  h6 {
+    font-size: em(16px);
+    font-weight: $primary-font-semibold;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: em(10px, 16px) 0 em(20px, 16px);
+  }
+}
+
+.footer-content .content-area {
+  padding: em(74px) em(30px);
+
+  h6 {
+    font-size: em(16px);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  p {
+    font-size: em(13px);
+    letter-spacing: 1px;
+    margin: em(22px, 13px) 0;
+  }
+
+  .legal {
+    font-size: em(10px, 13px);
+  }
+}

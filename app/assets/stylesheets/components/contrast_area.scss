@@ -1,0 +1,9 @@
+.contrast-area {
+  color: $white;
+  padding: em(25px);
+  
+  &.border-top {
+    border-top-width: 11px;
+    border-top-style: solid;
+  }
+}

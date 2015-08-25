@@ -4,7 +4,7 @@
     <%= render 'layouts/shared/head' %>
   </head>
 
-  <body>
+  <body class='<%= @industry.present? ? @industry.colour : Industry::DEFAULT_COLOUR %>'>
     <%= render 'layouts/shared/header' %>
 
     <%= yield %>
