@@ -40,7 +40,8 @@
     margin: 0 em(6px, 13px);
     padding: em(13px, 13px) em(8px, 13px);
 
-    &:hover {
+    &:hover,
+    &.active {
       padding: em(13px, 13px) em(8px, 13px) em(15px, 13px);
       position: relative;
       text-decoration: none;

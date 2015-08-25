@@ -1,3 +1,13 @@
+<div class="sticky-contact contrast-area transformed border-bottom">
+  <%= link_to '#', class: 'toggle-class', data: { container: '.sticky-contact', class: 'transformed', return: 'false' } do %>
+    Contact Us
+  <% end %>
+
+  <div class="sticky-contact-expanded">
+    <%= render 'contacts/form' %>
+  </div>
+</div>
+
 <header class="row collapse content-area">
   <div class="small-6 medium-2 columns">
     <%= logo_link(@industry) %>

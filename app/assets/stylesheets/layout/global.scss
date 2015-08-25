@@ -10,24 +10,25 @@ body {
 }
 
 a {
-  //color: $deep-purple;
+  color: $link-blue;
+  font-weight: $primary-font-semibold;
   text-decoration: none;
 
   &:link {
-    //color: $deep-purple;
+    color: $link-blue;
   }
 
   &:visited {
-    //color: $deep-purple;
+    color: $link-blue;
   }
 
   &:hover {
-    //color: $purple;
+    color: $link-blue;
     text-decoration: underline;
   }
 
   &:active {
-    //color: $light-purple;
+    color: darken($link-blue, 15%);
   }
 }
 

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require components/google_maps
+//= require components/toggle_class
 //= require vendor/foundation/foundation
 // require_tree .
 

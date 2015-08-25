@@ -6,22 +6,6 @@ footer {
     margin: 0 auto em(23px);
   }
 
-  input[type='reset'],
-  input[type='submit'],
-  button {
-    background: $white;
-    color: $black;
-    display: block;
-    font-size: em(11px);
-    text-transform: uppercase;
-    padding: em(15px, 11px) em(55px, 11px);
-    margin: 0 auto;
-
-    &:hover {
-      background: darken($white, 15%);
-    }
-  }
-
   input[type='text'],
   textarea {
     @include placeholder {

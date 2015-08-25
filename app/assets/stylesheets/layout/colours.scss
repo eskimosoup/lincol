@@ -29,6 +29,7 @@
     }
 
     .level-1:hover,
+    .level-1.active,
     ul {
       background: $main-navigation-hover;
     }
@@ -86,6 +87,7 @@
     }
 
     .level-1:hover,
+    .level-1.active,
     ul {
       background: $secondary-navigation-hover;
     }
