@@ -1,0 +1,36 @@
+.product-range-header {
+  display: inline-block;
+  font-size: em(13px);
+  text-transform: uppercase;
+  font-weight: $primary-font-semibold;
+  border-width: 1px;
+  border-style: solid;
+  padding: em(4px, 13px) em(90px, 13px);
+  margin: 0 0 em(30px, 13px);
+}
+
+.product-range {
+  display: inline-block;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  margin: em(15px) em(5px);
+}
+
+.product-range-content {
+  border: 6px solid $white;
+  position: relative;
+}
+
+.product-range-title {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: $primary-font-bold;
+  letter-spacing: 2px;
+  font-size: em(11px);
+  padding: em(10px, 11px);
+  margin-left: -40%;
+  width: 80%;
+  text-transform: uppercase;
+}

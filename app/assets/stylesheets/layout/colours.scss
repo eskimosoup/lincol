@@ -54,6 +54,63 @@
       border-bottom-color: $primary-yellow;
     }
   }
+
+  .industry-banner-more-linked-text {
+    color: $main-additional-color;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $main-additional-color;
+    }
+  }
+
+  .industry-banner-content {
+    background-image: image-url('components/industry-banners/yellow-marker.png');
+  }
+
+  .industry-banner-controls {
+    border-bottom-color: $black;
+  }
+
+  .industry-banner-control-link {
+    &.link-1 {
+      background-color: $main-grey;
+      border-top-color: $primary-yellow;
+    }
+
+    &.link-2 {
+      background-color: $main-additional-color;
+      border-top-color: $primary-yellow;
+    }
+
+    &.link-3 {
+      background-color: $black;
+      border-top-color: $primary-yellow;
+    }
+  }
+
+  .product-range-header {
+    border-color: $primary-yellow;
+    color: $black;
+  }
+
+  .product-range {
+    border-bottom-color: $primary-yellow;
+  }
+
+  .product-range-title {
+    background: $black;
+  }
+
+  .product {
+    background: $black;
+
+    hr {
+      border-top-color: $primary-yellow;
+    }
+  }
 }
 
 .blue {
@@ -110,6 +167,63 @@
 
     &.border-bottom {
       border-bottom-color: $primary-blue
+    }
+  }
+
+  .industry-banner-more-linked-text {
+    color: $secondary-additional-color;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $secondary-additional-color;
+    }
+  }
+
+  .industry-banner-content {
+    background-image: image-url('components/industry-banners/blue-marker.png');
+  }
+
+  .industry-banner-controls {
+    border-bottom-color: $secondary-default-header-color;
+  }
+
+  .industry-banner-control-link {
+    &.link-1 {
+      background-color: $primary-blue;
+      border-top-color: $black;
+    }
+
+    &.link-2 {
+      background-color: $secondary-default-header-color;
+      border-top-color: $black;
+    }
+
+    &.link-3 {
+      background-color: $secondary-background;
+      border-top-color: $black;
+    }
+  }
+
+  .product-range-header {
+    border-color: $secondary-default-header-color;
+    color: $secondary-background;
+  }
+
+  .product-range {
+    border-bottom-color: $secondary-background;
+  }
+
+  .product-range-title {
+    background: $secondary-additional-color;
+  }
+
+  .product {
+    background: $secondary-background;
+
+    hr {
+      border-bottom-color: $secondary-additional-color;
     }
   }
 }

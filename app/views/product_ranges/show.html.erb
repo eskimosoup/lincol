@@ -1,0 +1,63 @@
+<%= content_for :head do %>
+<script>
+var $slider;
+$(function() {
+  $('.industry-banners').slick({
+    dots: false,
+    arrows: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+  });
+})
+
+$(document).on('click', '.industry-banner-control-link', function(e) {
+  e.preventDefault();
+  slideIndex = $(this).data('slide');
+  $slider = $('.industry-banners');
+  $slider[0].slick.slickGoTo(parseInt(slideIndex));
+});
+</script>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns content-area">
+    <div class="industry-banner text-center">
+      <%= @industry.image('index') %>
+      <div class="title">
+        <div class="contrast-area">
+          <%= @industry.name %>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <li>
+          <%= link_to @industry.name, @industry.link %>
+        </li>
+
+        <li>
+          <span class="current"><%= @product_range.title %></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="inner padded text-center">
+      <div class="product-range-header">
+        <%= @product_range.title %>
+      </div>
+
+      <div class="text-center">
+        <%= render partial: 'products/product',
+            collection: BaseCollectionPresenter.new(collection: @product_range.displayable_products, view_template: self, presenter: ProductPresenter),
+            as: :product_presenter
+          %>
+      </div>
+    </div>
+  </div>
+</div>

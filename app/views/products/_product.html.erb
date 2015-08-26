@@ -1,0 +1,15 @@
+<%= link_to product_presenter.link, class: 'product' do %>
+  <div class="product-content">
+    <%= product_presenter.image %>
+
+    <hr />
+
+    <div class="product-title">
+      <%= product_presenter.title %>
+    </div>
+
+    <div class="product-summary">
+      <%= product_presenter.summary %>
+    </div>
+  </div>
+<% end %>

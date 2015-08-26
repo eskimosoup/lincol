@@ -15,6 +15,8 @@
 //= require components/google_maps
 //= require components/toggle_class
 //= require vendor/foundation/foundation
+//= require vendor/jquery.matchheight
+//= require slick.js.js
 // require_tree .
 
 $(document).foundation();

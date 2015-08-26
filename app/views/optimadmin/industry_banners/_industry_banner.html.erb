@@ -3,10 +3,12 @@
     <span class="drag-helper"></span>
   </div>
 
-  <div class="large-5 small-6 columns" data-equalizer-watch="module-list">
+  <div class="large-3 small-6 columns" data-equalizer-watch="module-list">
     <%= industry_banner_presenter.title %>
   </div>
-
+  <div class="large-3 small-6 columns" data-equalizer-watch="module-list">
+    <%= industry_banner_presenter.industry %>
+  </div>
 
     <div class="large-2 hide-for-medium-down columns" data-equalizer-watch="module-list">
       <%= industry_banner_presenter.edit_image(:image)%>
@@ -16,11 +18,6 @@
   <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
     <%= industry_banner_presenter.toggle_link %>
   </div>
-
-  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
-    <%= industry_banner_presenter.show_link %>
-  </div>
-
   <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
     <%= industry_banner_presenter.edit_link %>
   </div>

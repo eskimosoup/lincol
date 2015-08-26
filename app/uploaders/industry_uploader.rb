@@ -5,6 +5,6 @@ class IndustryUploader < Optimadmin::ImageUploader
   end
 
   version :homepage do
-    process resize_to_fill: [436, 144]
+    process resize_to_fill: [440, 144]
   end
 end

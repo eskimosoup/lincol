@@ -5,7 +5,7 @@ module Optimadmin
     edit_images_for IndustryBanner, [[:image, { show: ['fill', 369, 227] }]]
 
     def index
-      @industry_banners = Optimadmin::BaseCollectionPresenter.new(collection: IndustryBanner.where('title ILIKE ?', "#{params[:search]}%").industry_filter(params[:industry_id]).page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::IndustryBannerPresenter)
+      @industry_banners = Optimadmin::BaseCollectionPresenter.new(collection: IndustryBanner.where('title ILIKE ?', "#{params[:search]}%").industry_filter(params[:industry_id]).ordered.page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::IndustryBannerPresenter)
     end
 
     def show

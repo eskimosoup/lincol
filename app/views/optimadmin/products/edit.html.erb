@@ -1,0 +1,7 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Edit Product' %>
+
+<div class="main-content">
+  <%= render 'optimadmin/shared/module/form/back', path: products_path(product_range_id: @product_range.id), title: 'Product' %>
+
+  <%= render 'form', product: @product %>
+</div>

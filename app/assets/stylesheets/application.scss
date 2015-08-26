@@ -12,6 +12,8 @@
  *
   require_tree .
   require_self
+ *= require slick.js/slick.scss
+  require slick.js/slick-theme.scss
  */
 
 // Use this: http://dev.ghost.org/css-at-ghost/#namingthings
@@ -30,7 +32,12 @@
 'components/content_area',
 'components/contrast_area',
 'components/navigation',
+'components/industries',
 'components/forms',
+'components/breadcrumbs',
+'components/industry_banners',
+'components/product_ranges',
+'components/products',
 'layout/global',
 'layout/colours',
 'layout/header',

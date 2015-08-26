@@ -1,0 +1,88 @@
+<%= content_for :head do %>
+<script>
+var $slider;
+$(function() {
+  $('.industry-banners').slick({
+    dots: false,
+    arrows: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+  });
+})
+
+$(document).on('click', '.industry-banner-control-link', function(e) {
+  e.preventDefault();
+  slideIndex = $(this).data('slide');
+  $slider = $('.industry-banners');
+  $slider[0].slick.slickGoTo(parseInt(slideIndex));
+});
+</script>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns content-area separated">
+    <div class="industry-banner text-center">
+      <%= @industry.image('index') %>
+      <div class="title">
+        <div class="contrast-area">
+          <%= @industry.name %>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <li>
+          <span class="current">Industries</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="industry-banner-area">
+      <div class="industry-banners">
+        <%= render partial: 'industry_banners/industry_banner',
+            collection: BaseCollectionPresenter.new(collection: @industry.displayable_banners, view_template: self, presenter: IndustryBannerPresenter),
+            as: :industry_banner_presenter
+          %>
+      </div>
+
+      <div class="industry-banner-controls">
+        <%= render partial: 'industry_banners/industry_banner_control',
+            collection: BaseCollectionPresenter.new(collection: @industry.displayable_banners, view_template: self, presenter: IndustryBannerPresenter),
+            as: :industry_banner_presenter
+          %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns content-area separated">
+    <div class="inner padded text-center">
+      <div class="product-range-header">
+        <%= @industry.name %>
+      </div>
+
+      <div class="text-center">
+        <%= render partial: 'product_ranges/product_range',
+            collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
+            as: :product_range_presenter
+          %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-12 columns content-area separated">
+    <div class="inner">
+      <%= @industry.accreditations %>
+    </div>
+  </div>
+</div>

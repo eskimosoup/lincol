@@ -1,0 +1,32 @@
+<div class="row collapse module-list-index <%= cycle('odd', 'even') %>" data-equalizer="module-list" id="item_<%= frequently_asked_question_presenter.id %>">
+  <div class="large-1 small-2 columns" data-equalizer-watch="module-list">
+    <span class="drag-helper"></span>
+  </div>
+
+  <div class="large-5 small-10 columns" data-equalizer-watch="module-list">
+    <%= frequently_asked_question_presenter.question %>
+  </div>
+  <div class="large-3 small-10 columns" data-equalizer-watch="module-list">
+    <%= frequently_asked_question_presenter.industry %>
+  </div>
+
+
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%= frequently_asked_question_presenter.toggle_link %>
+  </div>
+
+  <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+    <%= frequently_asked_question_presenter.edit_link %>
+  </div>
+
+  <div class="large-1 hide-for-medium-down columns last" data-equalizer-watch="module-list">
+    <%= frequently_asked_question_presenter.delete_link %>
+  </div>
+
+  <div class="row module-list-detail hide" id="index-list-<%= frequently_asked_question_presenter.id %>">
+    <div class="small-12 columns module-list-summary last">
+
+    </div>
+  </div>
+</div>

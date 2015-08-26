@@ -9,5 +9,9 @@ module Optimadmin
     def title
       industry_banner.title
     end
+
+    def industry
+      industry_banner.industry.name if industry_banner.industry.present?
+    end
   end
 end
