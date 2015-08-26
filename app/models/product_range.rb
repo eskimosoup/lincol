@@ -11,7 +11,7 @@ class ProductRange < ActiveRecord::Base
   has_many :products, dependent: :destroy
 
   scope :displayable, -> { where(display: true) }
-  scope :home_highlight, -> { where(home_highlight: true).displayable }
+  scope :home_highlight, -> { where(home_highlight: true).displayable.order(:title) }
 
   def self.industry_filter(industry_id)
     if industry_id.blank?

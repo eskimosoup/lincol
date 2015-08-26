@@ -10,7 +10,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :product_range, counter_cache: true
 
-  scope :displayable, -> { where(display: true) }
+  scope :displayable, -> { where(display: true).order(:title) }
 
   def slug_candidates
     [
