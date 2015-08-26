@@ -8,4 +8,6 @@ class Industry < ActiveRecord::Base
   validates :subdomain, uniqueness: true, presence: true
 
   scope :displayable, -> { where(display: true) }
+
+  has_many :industry_banners, dependent: :destroy
 end

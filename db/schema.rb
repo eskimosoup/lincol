@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825090916) do
+ActiveRecord::Schema.define(version: 20150826072031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(version: 20150825090916) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
+
+  create_table "industry_banners", force: :cascade do |t|
+    t.integer  "position"
+    t.string   "title",                             null: false
+    t.text     "content"
+    t.string   "button_text",                       null: false
+    t.string   "more_text",   default: "Read more"
+    t.string   "more_link"
+    t.string   "image"
+    t.boolean  "display",     default: true
+    t.integer  "industry_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "industry_banners", ["industry_id"], name: "index_industry_banners_on_industry_id", using: :btree
 
   create_table "optimadmin_administrators", force: :cascade do |t|
     t.string   "username",               null: false
@@ -113,4 +129,5 @@ ActiveRecord::Schema.define(version: 20150825090916) do
     t.string "environment"
   end
 
+  add_foreign_key "industry_banners", "industries"
 end

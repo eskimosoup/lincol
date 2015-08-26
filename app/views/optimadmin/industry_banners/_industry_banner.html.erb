@@ -1,31 +1,37 @@
-<div class="row collapse module-list-index <%= cycle('odd', 'even') %>" data-equalizer="module-list" id="item_<%= industry_presenter.id %>">
+<div class="row collapse module-list-index <%= cycle('odd', 'even') %>" data-equalizer="module-list" id="item_<%= industry_banner_presenter.id %>">
   <div class="large-1 small-2 columns" data-equalizer-watch="module-list">
     <span class="drag-helper"></span>
   </div>
 
   <div class="large-5 small-6 columns" data-equalizer-watch="module-list">
-    <%= industry_presenter.name %>
+    <%= industry_banner_presenter.title %>
   </div>
 
 
     <div class="large-2 hide-for-medium-down columns" data-equalizer-watch="module-list">
-      <%= industry_presenter.edit_image(:image)%>
+      <%= industry_banner_presenter.edit_image(:image)%>
     </div>
 
 
   <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
-    <%= industry_presenter.toggle_link %>
+    <%= industry_banner_presenter.toggle_link %>
   </div>
 
   <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
-    <%= industry_presenter.view_industry_link %>
+    <%= industry_banner_presenter.show_link %>
   </div>
 
   <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
-    <%= industry_presenter.edit_link %>
+    <%= industry_banner_presenter.edit_link %>
   </div>
 
   <div class="large-1 hide-for-medium-down columns last" data-equalizer-watch="module-list">
-    <%= industry_presenter.delete_link %>
+    <%= industry_banner_presenter.delete_link %>
+  </div>
+
+  <div class="row module-list-detail hide" id="index-list-<%= industry_banner_presenter.id %>">
+    <div class="small-12 columns module-list-summary last">
+
+    </div>
   </div>
 </div>

@@ -25,6 +25,8 @@
 
       <ul class="content-category-list">
         <%= module_link(model: Industry, path: industries_path) %>
+        <%= module_link(content: "Industry Banners", model: IndustryBanner, path: industry_banners_path) %>
+
         <% if can? :manage, Optimadmin::MenuItem %>
           <li><%= link_to 'Site Navigation', menu_items_path %></li>
         <% end %>
