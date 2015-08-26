@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
     def load_industry
       begin
         industry = Industry.displayable.find_by_subdomain(request.domain(3)) if Rails.env.production?
-        #industry = Industry.displayable.find(3) if Rails.env.development?
-        industry = Industry.displayable.find(7) if Rails.env.development?
+        industry = Industry.displayable.find(3) if Rails.env.development?
+        #industry = Industry.displayable.find(7) if Rails.env.development?
         @industry = IndustryPresenter.new(object: industry, view_template: view_context)
         @header_menu = Optimadmin::Menu.new(name: @industry.menu)
       rescue
