@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.valid?
-      ContactMailer.new(global_site_settings, @contact).deliver_now
+      ContactMailer.new(@contact).deliver_now
       respond_to do |format|
         format.js { flash.now[:notice] = 'Thank you for your submission. We will be in touch.' }
         format.html { flash.now[:notice] = 'Thank you for your submission. We will be in touch.' }
