@@ -1,0 +1,36 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Industry Banners' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Industry Banner', object: IndustryBanner, path: new_industry_banner_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <%= render 'optimadmin/shared/industry_filter' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @industry_banners.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+    <%= list_item 'large-1 small-2' do %>
+      <%= octicon('settings') %>
+    <% end %>
+
+    <%= list_item 'large-3 small-4' do 'Title' end %>
+    <%= list_item 'large-3 small-4' do 'Industry' end %>
+
+    <%= list_item 'large-2 hide-for-medium-down' do 'Image' end %>
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item 'large-1 hide-for-medium-down text-center last' do 'Delete' end %>
+  </div>
+
+  <div class='module-sortable' data-module="Industry">
+    <%= render partial: 'industry_banner', collection: @industry_banners, as: :industry_banner_presenter %>
+  </div>
+
+  <%= paginate @industry_banners %>
+</div>

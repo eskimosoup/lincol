@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825090916) do
+ActiveRecord::Schema.define(version: 20150826111812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "frequently_asked_questions", force: :cascade do |t|
+    t.string   "question",                   null: false
+    t.text     "answer",                     null: false
+    t.integer  "position"
+    t.integer  "industry_id"
+    t.boolean  "display",     default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "frequently_asked_questions", ["industry_id"], name: "index_frequently_asked_questions_on_industry_id", using: :btree
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "industries", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +53,22 @@ ActiveRecord::Schema.define(version: 20150825090916) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
+
+  create_table "industry_banners", force: :cascade do |t|
+    t.integer  "position"
+    t.string   "title",                             null: false
+    t.text     "content"
+    t.string   "button_text",                       null: false
+    t.string   "more_text",   default: "Read more"
+    t.string   "more_link"
+    t.string   "image"
+    t.boolean  "display",     default: true
+    t.integer  "industry_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "industry_banners", ["industry_id"], name: "index_industry_banners_on_industry_id", using: :btree
 
   create_table "optimadmin_administrators", force: :cascade do |t|
     t.string   "username",               null: false
@@ -113,4 +154,68 @@ ActiveRecord::Schema.define(version: 20150825090916) do
     t.string "environment"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "title",                        null: false
+    t.string   "slug"
+    t.string   "suggested_url"
+    t.string   "image"
+    t.string   "style",                        null: false
+    t.string   "layout",                       null: false
+    t.boolean  "display",       default: true
+    t.text     "content",                      null: false
+    t.integer  "industry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["industry_id"], name: "index_pages_on_industry_id", using: :btree
+
+  create_table "product_ranges", force: :cascade do |t|
+    t.string   "title",                         null: false
+    t.text     "summary",                       null: false
+    t.string   "image"
+    t.integer  "industry_id"
+    t.string   "suggested_url"
+    t.string   "slug"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "products_count"
+    t.boolean  "display",        default: true
+    t.boolean  "home_highlight", default: true
+  end
+
+  add_index "product_ranges", ["industry_id"], name: "index_product_ranges_on_industry_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "title",                                  null: false
+    t.text     "summary",                                null: false
+    t.text     "description"
+    t.string   "technical_specification"
+    t.string   "image"
+    t.string   "video_url"
+    t.integer  "product_range_id"
+    t.boolean  "display",                 default: true
+    t.string   "suggested_url"
+    t.string   "slug"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "products", ["product_range_id"], name: "index_products_on_product_range_id", using: :btree
+
+  create_table "team_members", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "job_title"
+    t.integer  "position"
+    t.boolean  "display",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_foreign_key "frequently_asked_questions", "industries"
+  add_foreign_key "industry_banners", "industries"
+  add_foreign_key "pages", "industries"
+  add_foreign_key "product_ranges", "industries"
+  add_foreign_key "products", "product_ranges"
 end

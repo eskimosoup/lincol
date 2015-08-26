@@ -17,12 +17,23 @@ class IndustryPresenter < BasePresenter
     industry.menu
   end
 
-  #def image
-  #  h.image_tag page.image.show, alt: page.title, class: 'page-image image-right' if page.image?
-  #end
+  def image(crop = 'show')
+    h.image_tag industry.image.send(crop), alt: industry.name if industry.image?
+  end
 
   def colour
     industry.colour.present? ? industry.colour : Industry::DEFAULT_COLOUR
   end
 
+  def home_highlight_product_ranges
+    industry.product_ranges.home_highlight
+  end
+
+  def displayable_product_ranges
+    industry.product_ranges.displayable
+  end
+
+  def displayable_banners
+    industry.industry_banners.displayable
+  end
 end

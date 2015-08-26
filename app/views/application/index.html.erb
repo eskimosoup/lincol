@@ -1,5 +1,15 @@
+<%= content_for :head do %>
+<script>
+$(function() {
+  $('.industry-collection-product-ranges').matchHeight({
+    byRow: false,
+  });
+});
+</script>
+<% end %>
+
 <div class="row">
-  <div class="small-12 columns">
-    
+  <div class="small-12 columns content-area">
+    <%= render partial: 'industries/home', collection: @industries, as: :industry_presenter %>
   </div>
 </div>

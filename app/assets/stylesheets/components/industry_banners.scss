@@ -1,0 +1,53 @@
+.industry-banner-area {
+  margin: em(10px) em(55px);
+}
+
+.industry-banner-image {
+  float: right;
+}
+
+.industry-banner-content {
+  background-position: top left;
+  background-repeat: no-repeat;
+  margin: em(77px) 0 0;
+  padding-left: em(42px);
+  min-height: 56px;
+
+  p {
+    color: $black;
+    font-size: em(13px);
+    font-weight: $primary-font-semibold;
+  }
+}
+
+.industry-banner-more-linked-text {
+  font-weight: $primary-font-extrabold;
+  font-size: em(12px);
+}
+
+.industry-banner-controls {
+  border-bottom-width: 7px;
+  border-bottom-style: solid;
+  margin-bottom: em(40px);
+}
+
+.industry-banner-control-link {
+  border-top-width: 2px;
+  border-top-style: solid;
+  color: $white;
+  display: inline-block;
+  font-weight: $primary-font-semibold;
+  font-size: em(11px);
+  padding: em(18px, 11px) em(20px, 11px);
+  margin: 0 0 0 em(10px, 11px);
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+
+  &:hover,
+  &:active {
+    color: $white;
+  }
+}

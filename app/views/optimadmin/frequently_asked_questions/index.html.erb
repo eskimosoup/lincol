@@ -1,0 +1,33 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Frequently Asked Questions' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Question', object: FrequentlyAskedQuestion, path: new_frequently_asked_question_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <%= render 'optimadmin/shared/industry_filter' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @frequently_asked_questions.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+    <%= list_item 'large-1 small-2' do %>
+      <%= octicon('settings') %>
+    <% end %>
+
+    <%= list_item 'large-5 small-4' do 'Title' end %>
+    <%= list_item 'large-3 small-4' do 'Industry' end %>
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item 'large-1 hide-for-medium-down text-center last' do 'Delete' end %>
+  </div>
+
+  <div class='module-sortable' data-module="FrequentlyAskedQuestion">
+    <%= render partial: 'frequently_asked_question', collection: @frequently_asked_questions, as: :frequently_asked_question_presenter %>
+  </div>
+  <%= paginate @frequently_asked_questions %>
+</div>

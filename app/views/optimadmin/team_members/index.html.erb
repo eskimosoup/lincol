@@ -1,0 +1,33 @@
+<%= render 'optimadmin/shared/header/main_title', title: 'Manage Team Members' %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Team Member', object: TeamMember, path: new_team_member_path %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @team_members.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+    <%= list_item 'large-1 small-2' do %>
+      <%= octicon('settings') %>
+    <% end %>
+
+    <%= list_item 'large-6 small-10' do 'Title' end %>
+
+    <%= list_item 'large-2 hide-for-medium-down' do 'Image' end %>
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item 'large-1 hide-for-medium-down text-center last' do 'Delete' end %>
+  </div>
+
+  <div class='module-sortable' data-module="TeamMember">
+    <%= render partial: 'team_member', collection: @team_members, as: :team_member_presenter %>
+  </div>
+  <%= paginate @team_members %>
+</div>

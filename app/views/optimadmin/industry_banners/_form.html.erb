@@ -1,0 +1,74 @@
+<%= form_for(industry_banner) do |f| %>
+<% if industry_banner.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(industry_banner.errors.count, "error") %> prohibited this industry_banner from being saved:</h2>
+
+    <ul>
+      <% industry_banner.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+
+  <div class="tabs prevent-flash">
+    <ul class="tab-list">
+      <li><a href="#tabs-1">Content</a></li>
+      <li><a href="#tabs-2">Media</a></li>
+      <li><a href="#tabs-3">Settings</a></li>
+      <li>
+        <%= link_to '#', class: 'destroy-tabs right', data: { class: 'tabs' } do %>
+          <%= octicon('chevron-down') %>
+        <% end %>
+      </li>
+    </ul>
+
+    <%= field_set_tag nil, id: 'tabs-1' do %>
+            <div class="field">
+        <%= f.label :content %><br>
+        <%= f.text_area :content, class: 'tinymce' %>
+      </div>
+            <div class="field">
+        <%= f.label :button_text %><br>
+        <%= f.text_field :button_text %>
+      </div>
+            <div class="field">
+        <%= f.label :more_text %><br>
+        <%= f.text_field :more_text %>
+      </div>
+            <div class="field">
+        <%= f.label :more_link %><br>
+        <%= f.text_field :more_link %>
+      </div>
+          <% end %>
+
+    <%= field_set_tag nil, id: 'tabs-2' do %>
+            <%= f.image_field :image %>
+
+          <% end %>
+
+    <%= field_set_tag nil, id: 'tabs-3' do %>
+
+          <div class="field">
+      <%= f.label :industry_id %><br>
+      <%= f.select :industry_id, Industry.all.map{|x| [x.name, x.id]}, prompt: 'Please select industry' %>
+    </div>
+
+    <div class="field">
+<%= f.label :display %><br>
+<%= f.check_box :display %>
+</div>
+          <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

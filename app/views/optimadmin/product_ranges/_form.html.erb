@@ -1,0 +1,68 @@
+<%= form_for(product_range) do |f| %>
+<% if product_range.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(product_range.errors.count, "error") %> prohibited this product_range from being saved:</h2>
+
+    <ul>
+      <% product_range.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+
+  <div class="tabs prevent-flash">
+    <ul class="tab-list">
+      <li><a href="#tabs-1">Content</a></li>
+      <li><a href="#tabs-2">Media</a></li>
+      <li><a href="#tabs-3">Settings</a></li>
+      <li>
+        <%= link_to '#', class: 'destroy-tabs right', data: { class: 'tabs' } do %>
+          <%= octicon('chevron-down') %>
+        <% end %>
+      </li>
+    </ul>
+
+    <%= field_set_tag nil, id: 'tabs-1' do %>
+            <div class="field">
+        <%= f.label :summary %><br>
+        <%= f.text_area :summary, class: 'tinymce' %>
+      </div>
+          <% end %>
+
+    <%= field_set_tag nil, id: 'tabs-2' do %>
+            <%= f.image_field :image %>
+
+          <% end %>
+
+    <%= field_set_tag nil, id: 'tabs-3' do %>
+    <div class="field">
+<%= f.label :industry_id %><br>
+<%= f.select :industry_id, Industry.all.map{|x| [x.name, x.id]}, prompt: 'Please select industry' %>
+</div>
+            <div class="field">
+        <%= f.label :home_highlight %><br>
+        <%= f.check_box :home_highlight %>
+      </div>
+            <div class="field">
+        <%= f.label :display %><br>
+        <%= f.check_box :display %>
+      </div>
+      <div class="field">
+        <%= f.label :suggested_url %><br />
+        <%= f.text_field :suggested_url %>
+      </div>
+          <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

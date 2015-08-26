@@ -25,6 +25,12 @@
 
       <ul class="content-category-list">
         <%= module_link(model: Industry, path: industries_path) %>
+        <%= module_link(content: "Industry Banners", model: IndustryBanner, path: industry_banners_path) %>
+        <%= module_link(content: "Product Ranges", model: ProductRange, path: product_ranges_path) %>
+        <%= module_link(content: "Team Members", model: TeamMember, path: team_members_path) %>
+        <%= module_link(model: Page, path: pages_path) %>
+        <%= module_link(content: "Frequently Asked Questions", model: FrequentlyAskedQuestion, path: frequently_asked_questions_path) %>
+
         <% if can? :manage, Optimadmin::MenuItem %>
           <li><%= link_to 'Site Navigation', menu_items_path %></li>
         <% end %>

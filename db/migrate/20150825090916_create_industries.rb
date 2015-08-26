@@ -1,7 +1,7 @@
 class CreateIndustries < ActiveRecord::Migration
   def change
     create_table :industries do |t|
-      t.string :name
+      t.string :name, null: false
       t.string :image
       t.string :colour
       t.integer :position

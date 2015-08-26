@@ -13,14 +13,17 @@ $error: #a4232f;
 $link-blue: #20446b;
 
 $background-color: #f0f6ff;
-$content-background-color: #fff;
+$content-background-color: #f9fbff;
 
 $primary-yellow: #fefa02;
 $main-default-text-color: #000;
 $main-default-header-color: $main-default-text-color;
 $main-background: #000;
 $main-navigation-background: $main-background;
-$main-navigation-hover: #626262;
+$main-additional-color: #626262;
+$main-navigation-hover: $main-additional-color;
+$main-grey: #a0a0a0;
+
 
 $primary-blue: #00b9e5;
 $secondary-default-text-color: $main-default-text-color;
@@ -28,3 +31,4 @@ $secondary-default-header-color: #0d418c;
 $secondary-background: #1a2b44;
 $secondary-navigation-background: $secondary-background;
 $secondary-navigation-hover: #002496;
+$secondary-additional-color: $secondary-default-header-color;

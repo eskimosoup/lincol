@@ -1,0 +1,28 @@
+<%= render 'optimadmin/shared/header/main_title', title: "Manage Products for #{@product_range.title}" %>
+
+<div class="main-content">
+  <div class="row module-header collapse">
+    <%= render 'optimadmin/shared/module/form/back', path: product_ranges_path, title: 'Product Ranges', prefix: 'Back to' %>
+    <%= render 'optimadmin/shared/module/index/new_item', title: 'Product', object: Product, path: new_product_path(product_range_id: @product_range.id) %>
+    <%= render 'optimadmin/shared/search_form' %>
+    <%= render 'optimadmin/shared/module/index/pagination' %>
+    <!--
+      <%= render 'optimadmin/shared/module/index/order', options: [['Username', 'username']] %>
+    -->
+    <%= render 'optimadmin/shared/module/index/recycle_bin', items: @products.size, path: root_url %>
+  </div>
+
+  <div class="row collapse module-list-index header">
+    <%= list_item 'large-7 small-8' do 'Title' end %>
+
+    <%= list_item 'large-2 hide-for-medium-down' do 'Image' end %>
+
+    <%= list_item { 'Display' } %>
+    <%= list_item { 'Edit' } %>
+
+    <%= list_item 'large-1 hide-for-medium-down text-center last' do 'Delete' end %>
+  </div>
+
+  <%= render partial: 'product', collection: @products, as: :product_presenter %>
+  <%= paginate @products %>
+</div>

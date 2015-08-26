@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :global_site_settings, :load_industry, :load_objects
 
   def index
-    render 'industry/show' if @industry.present?
+    render 'industries/show' if @industry.present?
+    @industries = BaseCollectionPresenter.new(collection: Industry.displayable, view_template: view_context, presenter: IndustryPresenter) unless @industry.present?
   end
 
   private
@@ -14,17 +15,18 @@ class ApplicationController < ActionController::Base
     def load_industry
       begin
         industry = Industry.displayable.find_by_subdomain(request.domain(3)) if Rails.env.production?
-        industry = Industry.displayable.find(10) if Rails.env.development?
+        #industry = Industry.displayable.find(3) if Rails.env.development?
+        industry = Industry.displayable.find(7) if Rails.env.development?
         @industry = IndustryPresenter.new(object: industry, view_template: view_context)
         @header_menu = Optimadmin::Menu.new(name: @industry.menu)
       rescue
         @header_menu = Optimadmin::Menu.new(name: "header")
       end
-      @footer_menu = Optimadmin::Menu.new(name: "footer")
     end
 
     def load_objects
       @contact = Contact.new
+      @footer_menu = Optimadmin::Menu.new(name: "footer")
     end
 
     def global_site_settings
