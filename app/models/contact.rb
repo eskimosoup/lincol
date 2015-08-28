@@ -5,5 +5,5 @@ class Contact
   attr_accessor :name, :email, :message, :telephone, :company_name, :form
 
   validates :name, :message, :telephone, presence: true
-  validates :email, presence: true, unless: Proc.new{|x| x.form == 'callback' }
+  validates :email, presence: true, email: true, unless: Proc.new{|x| x.form == 'callback' }
 end
