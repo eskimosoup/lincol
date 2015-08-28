@@ -22,15 +22,8 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
 
 <div class="row">
   <div class="small-12 columns content-area separated">
-    <div class="industry-banner text-center">
-      <%= @industry.image('index') %>
-      <div class="title">
-        <div class="contrast-area">
-          <%= @industry.name %>
-        </div>
-      </div>
-    </div>
-
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
+    
     <div class="inner">
       <ul class="breadcrumbs">
         <li>
@@ -64,7 +57,7 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
 <div class="row">
   <div class="small-12 columns content-area separated">
     <div class="inner padded text-center">
-      <div class="product-range-header">
+      <div class="page-title-header">
         <%= @industry.name %>
       </div>
 

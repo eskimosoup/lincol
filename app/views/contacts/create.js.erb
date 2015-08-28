@@ -1,2 +1,6 @@
 $('.<%= @contact.form %>-form').replaceWith('<%= j render "contacts/shared/#{form_partial_helper(@contact.form)}" %>')
 $('.<%= @contact.form %>-form input[type="text"], textarea').val('');
+
+<% if @contact.form == 'callback' || @contact.form == 'download' %>
+resizeColorbox();
+<% end %>

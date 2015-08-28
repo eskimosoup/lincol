@@ -1,0 +1,30 @@
+<%= content_for :head do %>
+  <script>
+  function resizeColorbox() {
+    parent.$.colorbox.resize({
+      innerWidth: $('body').width(),
+      innerHeight: $('body').height()
+    });
+  }
+
+  $(function(){
+    resizeColorbox();
+  });
+  </script>
+<% end %>
+
+<div class="download-form">
+  <div class="contrast-area border-top">
+    <h6 class="text-center uppercase">Download Technical Specification File</h6>
+
+    <%= render 'shared/flash_messages', flash: flash %>
+
+    <% if @download.nil? %>
+      <%= render 'contacts/download_form', form: 'download' %>
+    <% else %>
+      <h2>
+        <%= @product.download_verified %>
+      </h2>
+    <% end %>
+  </div>
+</div>

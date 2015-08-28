@@ -11,6 +11,15 @@
     border-bottom-width: 2px;
     border-bottom-style: solid;
   }
+
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $white;
+    }
+  }
 }
 
 footer .contrast-area {

@@ -1,0 +1,35 @@
+.team-members-job-title {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  font-size: em(16px);
+  line-height: 1;
+  margin: em(15px, 16px) 0;
+  padding: 0 0 em(15px, 16px);
+  text-align: center;
+}
+
+.team-member-wrap {
+  display: inline-block;
+  margin: em(15px) em(5px);
+  text-align: left;
+}
+
+.team-member {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+}
+
+.team-member-content {
+  border: 6px solid $white;
+  position: relative;
+}
+
+.team-member-name {
+  font-size: em(14px);
+  font-weight: $primary-font-bold;
+  margin: em(15px, 14px) 0 0;
+}
+
+.team-member-job-title {
+  font-size: em(12px);
+}

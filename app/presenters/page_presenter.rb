@@ -5,12 +5,16 @@ class PagePresenter < BasePresenter
     page.title
   end
 
+  # used for industry header
+  def name
+    title
+  end
+
   def content
     h.raw page.content
   end
 
-  def image
-    h.image_tag page.image.show, alt: page.title if page.image?
+  def image(crop = 'show')
+    h.image_tag page.image.send(crop), alt: page.title if page.image?
   end
-
 end

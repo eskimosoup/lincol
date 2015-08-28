@@ -10,7 +10,7 @@ class ProductRange < ActiveRecord::Base
   belongs_to :industry
   has_many :products, dependent: :destroy
 
-  scope :displayable, -> { where(display: true) }
+  scope :displayable, -> { where(display: true).order(:title) }
   scope :home_highlight, -> { where(home_highlight: true).displayable.order(:title) }
 
   def self.industry_filter(industry_id)

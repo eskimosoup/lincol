@@ -36,4 +36,8 @@ class IndustryPresenter < BasePresenter
   def displayable_banners
     industry.industry_banners.displayable
   end
+
+  def displayable_frequently_asked_questions
+    industry.frequently_asked_questions.displayable
+  end
 end

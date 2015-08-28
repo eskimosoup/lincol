@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="small-12 columns content-area">
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
+
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <li>
+          <%= link_to @industry.name, @industry.link %>
+        </li>
+
+        <li>
+          <span class="current">Frequently Asked Questions</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="inner padded">
+      <div class="text-center">
+        <h1 class="page-title-header">
+          <%= @additional_content.title('FAQs') %>
+        </h1>
+      </div>
+
+      <div class="inner-content-area">
+        <%= @additional_content.content %>
+      </div>
+
+
+      <%= render partial: 'frequently_asked_question', collection: @frequently_asked_questions, as: :frequently_asked_question_presenter %>
+    </div>
+  </div>
+</div>

@@ -9,5 +9,9 @@ module Optimadmin
     def name
       team_member.name
     end
+
+    def job_title
+      team_member.job_title
+    end
   end
 end

@@ -1,29 +1,39 @@
 <html lang="en">
   <body>
 
+    <% if @contact.form == 'callback' %>
+      <h1>Request for a callback</h1>
+    <% end %>
+
     <p>
       <strong>Name:</strong>
       <br />
       <%= @contact.name %>
     </p>
 
-    <p>
-      <strong>Email:</strong>
-      <br />
-      <%= mail_to(@contact.email) %>
-    </p>
+    <% if @contact.email.present? %>
+      <p>
+        <strong>Email:</strong>
+        <br />
+        <%= mail_to(@contact.email) %>
+      </p>
+    <% end %>
 
-    <p>
-      <strong>Company name:</strong>
-      <br />
-      <%= @contact.company_name %>
-    </p>
+    <% if @contact.company_name.present? %>
+      <p>
+        <strong>Company name:</strong>
+        <br />
+        <%= @contact.company_name %>
+      </p>
+    <% end %>
 
-    <p>
-      <strong>Telephone:</strong>
-      <br />
-      <%= @contact.telephone %>
-    </p>
+    <% if @contact.telephone.present? %>
+      <p>
+        <strong>Telephone:</strong>
+        <br />
+        <%= @contact.telephone %>
+      </p>
+    <% end %>
 
     <p>
       <strong>Message:</strong>

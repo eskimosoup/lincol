@@ -1,0 +1,24 @@
+<%= content_for :head do %>
+  <script>
+  function resizeColorbox() {
+    parent.$.colorbox.resize({
+      innerWidth: $('body').width(),
+      innerHeight: $('body').height()
+    });
+  }
+
+  $(function(){
+    resizeColorbox();
+  });
+  </script>
+<% end %>
+
+<div class="callback-form">
+  <div class="contrast-area border-top">
+    <h6 class="text-center uppercase">Request a Callback</h6>
+
+    <%= render 'shared/flash_messages', flash: flash %>
+
+    <%= render 'contacts/callback_form', form: 'callback' %>
+  </div>
+</div>

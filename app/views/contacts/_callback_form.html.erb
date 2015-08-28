@@ -1,0 +1,38 @@
+<%= form_for @contact, remote: true do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize @contact.errors.count, 'error' %> prevented this message from being sent
+      </h2>
+
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :company_name, placeholder: 'Company name' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :telephone, placeholder: 'Telephone' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :message, placeholder: 'Best time to call' %>
+  </div>
+
+  <% if defined? form %>
+    <%= f.hidden_field :form, value: form %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Request callback', class: 'light-submit-button' %>
+  </div>
+<% end %>

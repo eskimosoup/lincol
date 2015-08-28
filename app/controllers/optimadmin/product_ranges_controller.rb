@@ -5,7 +5,7 @@ module Optimadmin
     edit_images_for ProductRange, [[:image, { show: ['fill', 203, 164] }]]
 
     def index
-      @product_ranges = Optimadmin::BaseCollectionPresenter.new(collection: ProductRange.industry_filter(params[:industry_id]).where('title ILIKE ?', "#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ProductRangePresenter)
+      @product_ranges = Optimadmin::BaseCollectionPresenter.new(collection: ProductRange.industry_filter(params[:industry_id]).where('title ILIKE ?', "#{params[:search]}%").order(:industry_id).page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ProductRangePresenter)
     end
 
     def show

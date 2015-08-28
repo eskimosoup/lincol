@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  include NormalizeBlankValues
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :history]
 
@@ -11,6 +12,7 @@ class Product < ActiveRecord::Base
   belongs_to :product_range, counter_cache: true
 
   scope :displayable, -> { where(display: true).order(:title) }
+  scope :technical_specification_downloads, -> { where("technical_specification IS NOT NULL").displayable }
 
   def slug_candidates
     [

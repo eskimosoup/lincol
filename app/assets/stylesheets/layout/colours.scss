@@ -1,4 +1,28 @@
 .yellow {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  .product-technical-specification-download {
+    color: $black;
+  }
+
+  .sticky-contact .toggle-class {
+    background-image: image-url('layout/header/yellow-contact-arrow.png');
+  }
+
+  .frequently-asked-question .question a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $black;
+    }
+  }
+
   .color {
     color: $primary-yellow;
   }
@@ -91,12 +115,14 @@
     }
   }
 
-  .product-range-header {
+  .page-title-header {
     border-color: $primary-yellow;
     color: $black;
   }
 
-  .product-range {
+  .product-range,
+  .team-member,
+  .frequently-asked-question {
     border-bottom-color: $primary-yellow;
   }
 
@@ -111,9 +137,42 @@
       border-top-color: $primary-yellow;
     }
   }
+
+  .product-show-title,
+  .team-members-job-title {
+    border-bottom-color: $primary-yellow;
+  }
+
+  .product-technical-specification-download-container {
+    border-bottom-color: $main-grey;
+  }
 }
 
 .blue {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  .product-technical-specification-download {
+    color: $secondary-default-text-color;
+  }
+
+  .sticky-contact .toggle-class {
+    background-image: image-url('layout/header/blue-contact-arrow.png');
+  }
+
+  .frequently-asked-question .question a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $secondary-default-text-color;
+    }
+  }
+
   .color {
     color: $secondary-default-header-color;
   }
@@ -206,12 +265,14 @@
     }
   }
 
-  .product-range-header {
+  .page-title-header {
     border-color: $secondary-default-header-color;
     color: $secondary-background;
   }
 
-  .product-range {
+  .product-range,
+  .team-member,
+  .frequently-asked-question {
     border-bottom-color: $secondary-background;
   }
 
@@ -224,6 +285,29 @@
 
     hr {
       border-bottom-color: $secondary-additional-color;
+    }
+  }
+
+  .product-show-title {
+    border-bottom-color: $secondary-border-color;
+  }
+
+  .product-technical-specification-download-container {
+    border-bottom-color: $secondary-border-color;
+  }
+}
+
+.blue,
+.yellow {
+  .contrast-area {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: $white;
     }
   }
 }

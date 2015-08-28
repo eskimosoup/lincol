@@ -1,6 +1,21 @@
 .product {
   display: inline-block;
   margin: em(15px) em(5px);
+  text-decoration: none;
+  color: $content-background-color;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    border: 5px solid $content-background-color;
+    color: $content-background-color;
+    text-decoration: none;
+  }
+
+  &:hover {
+    border: 5px solid $primary-yellow;
+  }
 
   img {
     border-bottom: 5px solid $white;
@@ -32,13 +47,66 @@
 
 .product-summary {
   background: $content-background-color;
-  padding: em(15px, 11px) 0 0 0;
+  padding: em(14px, 11px) 0 0 0;
 
   p {
+    color: $black;
     margin: 0;
     padding: 0;
     font-size: em(11px);
     line-height: 1.1;
     max-width: 203px;
   }
+}
+
+.product-image-area {
+  .product-range {
+    margin: 0;
+  }
+}
+
+.product-colorbox-image-prompt {
+  display: block;
+  font-size: em(11px);
+  font-weight: $primary-font-bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: em(12px) 0;
+}
+
+.product-show-title {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  font-size: em(19px);
+  font-weight: $primary-font-extrabold;
+  margin: 0 0 em(20px, 19px);
+  padding: 0 0 em(12px, 19px);
+  text-transform: uppercase;
+}
+
+.product-technical-specification-download {
+  font-weight: $primary-font-extrabold;
+  text-decoration: underline;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.product-technical-specification-download-container {
+  margin: em(5px) 0;
+  padding: em(5px) 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.product-video {
+  margin: em(20px) 0 em(10px);
+}
+
+.product-video-title {
+  font-size: em(16px);
+  font-weight: $primary-font-bold;
+  margin: 0 0 em(10px, 16px);
 }

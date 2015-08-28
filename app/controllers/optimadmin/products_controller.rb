@@ -3,7 +3,7 @@ module Optimadmin
     before_action :set_product_range, except: [:create, :edit, :update, :destroy]
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-    edit_images_for Product, [[:image, { show: ['fill', 203, 164] }]]
+    edit_images_for Product, [[:image, { show: ['fill', 203, 164], full: ['fit', 960, 480] }]]
 
     def index
       @products = Optimadmin::BaseCollectionPresenter.new(collection: Product.where('title ILIKE ?', "#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ProductPresenter)

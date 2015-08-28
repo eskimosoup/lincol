@@ -1,0 +1,10 @@
+<% if defined? industry %>
+  <div class="industry-banner text-center">
+    <%= industry.image('header') %>
+    <div class="title">
+      <div class="contrast-area">
+        <%= industry.name %>
+      </div>
+    </div>
+  </div>
+<% end %>
