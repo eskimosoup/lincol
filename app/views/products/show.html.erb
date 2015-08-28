@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="small-12 columns content-area">
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
+
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <li>
+          <%= link_to @industry.name, @industry.link %>
+        </li>
+
+        <li>
+          <%= link_to @product_range.title, @product_range.link %>
+        </li>
+
+        <li>
+          <span class="current"><%= @product.title %></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="inner padded">
+      <div class="text-center">
+        <div class="page-title-header">
+          <%= @product_range.title %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-4 columns">
+          <div class="product-image-area text-center">
+            <%= @product.colorbox_image %>
+            <%= link_to 'Click to enlarge', @product.image_url('full'), class: 'colorbox product-colorbox-image-prompt', title: @product.title %>
+          </div>
+        </div>
+
+        <div class="small-12 medium-8 columns">
+          <h1 class="product-show-title"><%= @product.title %></h1>
+
+          <div class="inner-content-area">
+            <%= @product.description %>
+          </div>
+
+          <%= @product.download_technical_specification %>
+
+          <% if @product.has_video? %>
+            <div class="product-video">
+              <div class="product-video-title">
+                Watch <%= @product.title %> in Action
+              </div>
+
+              <%= @product.show_video %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

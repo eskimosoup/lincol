@@ -13,6 +13,7 @@
   require_tree .
   require_self
  *= require slick.js/slick.scss
+ *= require colorbox
   require slick.js/slick-theme.scss
  */
 
@@ -38,6 +39,8 @@
 'components/industry_banners',
 'components/product_ranges',
 'components/products',
+'components/team_members',
+'components/frequently_asked_questions',
 'layout/global',
 'layout/colours',
 'layout/header',

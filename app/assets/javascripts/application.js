@@ -17,6 +17,17 @@
 //= require vendor/foundation/foundation
 //= require vendor/jquery.matchheight
 //= require slick.js.js
+//= require colorbox
 // require_tree .
 
 $(document).foundation();
+
+$(function() {
+  $('.colorbox').colorbox();
+
+  $('.colorbox-iframe').colorbox({
+    iframe: true,
+    width: "550px",
+    height: "500px"
+  });
+});

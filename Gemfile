@@ -47,10 +47,15 @@ end
 group :development do
   gem 'quiet_assets', '~> 1.1.0'
   gem 'guard-rspec', require: false
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
+  gem 'stackprof', '~> 0.2.7'
+  gem "bullet"
 end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-slick.js'
+  gem 'rails-assets-colorbox'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

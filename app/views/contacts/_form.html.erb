@@ -1,3 +1,17 @@
-<%= form_for @contact do |f| %>
+<%= form_for @inpage_contact, url: inpage_contact_contacts_path do |f| %>
+  <% if @inpage_contact.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize @inpage_contact.errors.count, 'error' %> prevented this message from being sent
+      </h2>
+
+      <ul>
+        <% @inpage_contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= render 'contacts/form_fields', f: f %>
 <% end %>

@@ -4,7 +4,7 @@ class FrequentlyAskedQuestion < ActiveRecord::Base
   validates :question, :answer, :industry, presence: true
 
   scope :ordered, -> { order(:position) }
-  scope :displayable, -> { where(display: true) }
+  scope :displayable, -> { where(display: true).ordered }
 
   def self.industry_filter(industry_id)
     if industry_id.blank?

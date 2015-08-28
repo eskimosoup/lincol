@@ -1,0 +1,15 @@
+.frequently-asked-question {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  line-height: 1;
+  margin: em(15px) 0;
+  padding: 0 0 em(15px);
+
+  .question {
+    font-size: em(16px);
+  }
+
+  .answer {
+    margin: em(5px) 0;
+  }
+}

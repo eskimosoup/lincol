@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="small-12 columns content-area">
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
+
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <% if @industry.present? %>
+          <li>
+            <%= link_to @industry.name, @industry.link %>
+          </li>
+        <% end %>
+
+        <li>
+          <span class="current">Contact Us</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="inner padded">
+      <div class="text-center">
+        <h1 class="page-title-header">
+          Contact Us
+        </h1>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-8 columns">
+          <p>Please use the form below to get in touch.</p>
+
+          <%= render 'shared/flash_messages', flash: flash %>
+        </div>
+
+        <div class="small-12 medium-4 columns">
+          <p>
+            <strong class="display-block">Telephone</strong>
+            <%= global_site_settings['Phone'] %>
+          </p>
+
+          <p>
+            <strong class="display-block">Registered Office</strong>
+            <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
+          </p>
+
+          <p class="legal">
+            <strong class="display-block">Company Registration No</strong>
+            189921 Registered in England
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

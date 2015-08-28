@@ -1,3 +1,36 @@
-<%= @presented_page.title %>
+<div class="row">
+  <div class="small-12 columns content-area">
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
+    <%= render 'industries/header', industry: @presented_page unless @industry.present? %>
 
-<%= @presented_page.content %>
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <li>
+          <span class="current"><%= @page.title %></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="inner padded">
+      <div class="text-center">
+        <h1 class="page-title-header">
+          <%= @presented_page.title %>
+        </h1>
+      </div>
+
+      <% if @industry.present? %>
+        <div class="text-center">
+          <%= @presented_page.image %>
+        </div>
+      <% end %>
+
+      <div class="inner-content-area">
+        <%= @presented_page.content %>
+      </div>
+    </div>
+  </div>
+</div>

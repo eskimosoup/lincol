@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="small-12 columns content-area">
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
+
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
+
+        <li>
+          <%= link_to @industry.name, @industry.link %>
+        </li>
+
+        <li>
+          <span class="current">Technical Specification Downloads</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="inner padded">
+      <div class="text-center">
+        <div class="page-title-header">
+          <%= @industry.name %>
+        </div>
+      </div>
+
+
+      <% @products.each do |group, products| %>
+        <h2 class="product-show-title"><%= group.title %></h2>
+
+        <% products.each do |product| %>
+          <%= render 'products/download_link', product_presenter: ProductPresenter.new(object: product, view_template: self) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

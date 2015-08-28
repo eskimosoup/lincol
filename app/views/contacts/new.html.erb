@@ -1,18 +1,63 @@
+<div class="row">
+  <div class="small-12 columns content-area">
+    <%= render 'industries/header', industry: @industry if @industry.present? %>
 
-<section class="content">
-  <div class="row">
-    <div class="small-12 medium-8 columns">
-      <h1>Contact form</h1>
+    <div class="inner">
+      <ul class="breadcrumbs">
+        <li>
+          <%= link_to 'Home', root_url %>
+        </li>
 
-      <%= render 'shared/flash_messages', flash: flash %>
+        <% if @industry.present? %>
+          <li>
+            <%= link_to @industry.name, @industry.link %>
+          </li>
+        <% end %>
 
-      <%= render 'form' %>
+        <li>
+          <span class="current">Contact Us</span>
+        </li>
+      </ul>
     </div>
 
-    <div class="small-12 medium-4 columns">
-      <h2>Other contact methods</h2>
-      <strong>Telephone</strong>
-      <%= global_site_settings['Telephone'] %>
+    <div class="inner padded">
+      <div class="text-center">
+        <h1 class="page-title-header">
+          Contact Us
+        </h1>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-8 columns">
+          <div class="inner-content-area">
+            <p>Please use the form below to get in touch.</p>
+          </div>
+
+          <%= render 'shared/flash_messages', flash: flash %>
+
+          <%= render 'form' %>
+        </div>
+
+        <div class="small-12 medium-3 medium-offset-1 columns">
+          <div class="inner-content-area">
+            <p>
+              <strong class="display-block">Telephone</strong>
+              <%= global_site_settings['Phone'] %>
+            </p>
+
+            <p>
+              <strong class="display-block">Registered Office</strong>
+              <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
+            </p>
+
+            <p class="legal">
+              <strong class="display-block">Company Registration No</strong>
+              189921 <br />
+              Registered in England
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>

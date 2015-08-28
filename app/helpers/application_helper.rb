@@ -12,6 +12,10 @@ module ApplicationHelper
         'footer_form'
       when 'sidebar'
         'sidebar_form'
+      when 'callback'
+        'callback_form'
+      when 'download'
+        'download_form'
       else
         'form'
       end

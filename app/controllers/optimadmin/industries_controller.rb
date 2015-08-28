@@ -2,7 +2,7 @@ module Optimadmin
   class IndustriesController < Optimadmin::ApplicationController
     before_action :set_industry, only: [:show, :edit, :update, :destroy]
 
-    edit_images_for Industry, [[:image, { index: ['fill', 811, 163], homepage: ['fill', 434, 144] }]]
+    edit_images_for Industry, [[:image, { header: ['fill', 811, 163], homepage: ['fill', 434, 144] }]]
 
     def index
       @industries = Optimadmin::BaseCollectionPresenter.new(collection: Industry.ordered.where('name ILIKE ?', "#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::IndustryPresenter)
