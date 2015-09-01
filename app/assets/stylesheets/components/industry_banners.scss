@@ -1,5 +1,9 @@
 .industry-banner-area {
   margin: em(10px) em(55px);
+
+  @include responsive-to(small) {
+    margin: em(5px);
+  }
 }
 
 .industry-banner-image {
@@ -12,6 +16,10 @@
   margin: em(77px) 0 0;
   padding-left: em(42px);
   min-height: 56px;
+
+  @include responsive-to(small) {
+    margin: 0;
+  }
 
   p {
     color: $black;
@@ -40,6 +48,10 @@
   font-size: em(11px);
   padding: em(18px, 11px) em(20px, 11px);
   margin: 0 0 0 em(10px, 11px);
+
+  @include responsive-to(small) {
+    min-width: 90%;
+  }
 
   &:link,
   &:visited {

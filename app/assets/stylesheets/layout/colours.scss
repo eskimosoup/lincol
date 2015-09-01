@@ -52,6 +52,13 @@
       background: none;
     }
 
+
+    @include responsive-to(small) {
+      &:last-of-type {
+        background: transparent image-url('components/navigation/yellow-border.png') center right no-repeat;
+      }
+    }
+
     .level-1:hover,
     .level-1.active,
     ul {
@@ -131,7 +138,9 @@
   }
 
   .product {
-    background: $black;
+    .product-title {
+      background: $black;
+    }
 
     hr {
       border-top-color: $primary-yellow;
@@ -200,6 +209,13 @@
     &:last-of-type,
     .dropdown li {
       background: none;
+    }
+
+
+    @include responsive-to(small) {
+      &:last-of-type {
+        background: transparent image-url('components/navigation/blue-border.png') center right no-repeat;
+      }
     }
 
     .level-1:hover,
@@ -281,7 +297,9 @@
   }
 
   .product {
-    background: $secondary-background;
+    .product-title {
+      background: $secondary-background;
+    }
 
     hr {
       border-bottom-color: $secondary-additional-color;

@@ -13,6 +13,7 @@ class Product < ActiveRecord::Base
 
   scope :displayable, -> { where(display: true).order(:title) }
   scope :technical_specification_downloads, -> { where("technical_specification IS NOT NULL").displayable }
+  scope :home_highlight, -> { where(home_highlight: true).displayable }
 
   def slug_candidates
     [

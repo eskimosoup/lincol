@@ -4,12 +4,35 @@
   .inner {
     margin: 0 em(65px);
 
+    @include responsive-to(medium-down) {
+      margin: 0;
+    }
+
     &.padded {
       padding: em(40px);
+
+      @include responsive-to(medium-down) {
+        padding: em(10px) 0;
+      }
     }
   }
 
   &.separated {
     margin: 0 auto em(20px);
+  }
+}
+
+.page-title-header {
+  display: inline-block;
+  font-size: em(13px);
+  text-transform: uppercase;
+  font-weight: $primary-font-semibold;
+  border-width: 1px;
+  border-style: solid;
+  padding: em(4px, 13px) em(90px, 13px);
+  margin: 0 0 em(30px, 13px);
+
+  @include responsive-to(small) {
+    margin: 0 0 em(15px, 13px);
   }
 }

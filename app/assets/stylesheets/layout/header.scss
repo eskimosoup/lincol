@@ -1,5 +1,10 @@
 .header-introduction {
   @extend %clearfix;
+
+
+  @include responsive-to(small) {
+    padding: 0 em(15px, 13px);
+  }
 }
 
 
@@ -10,6 +15,11 @@
   font-weight: $primary-font-semibold;
   letter-spacing: 1px;
   margin-top: em(23px, 13px);
+
+  @include responsive-to(small) {
+    margin: 0;
+    text-align: center;
+  }
 
   span {
     font-weight: $primary-font-extrabold;
@@ -26,7 +36,24 @@
   text-align: right;
   text-transform: uppercase;
 
+  @include responsive-to(small) {
+    float: left;
+    margin: em(5px) 0;
+    text-align: center;
+    width: 100%;
+  }
+
   strong {
     font-weight: $primary-font-extrabold;
+  }
+}
+
+.logo-link {
+  display: inline-block;
+  padding: em(10px);
+
+  @include responsive-to(small) {
+    padding: 0;
+    width: 30%;
   }
 }

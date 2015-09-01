@@ -6,7 +6,7 @@ module Optimadmin
     edit_images_for Product, [[:image, { show: ['fill', 203, 164], full: ['fit', 960, 480] }]]
 
     def index
-      @products = Optimadmin::BaseCollectionPresenter.new(collection: Product.where('title ILIKE ?', "#{params[:search]}%").page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ProductPresenter)
+      @products = Optimadmin::BaseCollectionPresenter.new(collection: Product.where('title ILIKE ? AND product_range_id = ?', "#{params[:search]}%", @product_range.id).page(params[:page]).per(params[:per_page] || 15), view_template: view_context, presenter: Optimadmin::ProductPresenter)
     end
 
     def show
@@ -56,7 +56,7 @@ module Optimadmin
 
     def product_params
       params.require(:product).permit(:title, :summary, :description, :technical_specification, :remove_technical_specification, :remote_technical_specification_url,
-                                      :image, :remove_image, :remote_image_url, :image_cache, :video_url, :product_range_id, :display, :suggested_url)
+                                      :image, :remove_image, :remote_image_url, :image_cache, :video_url, :product_range_id, :display, :suggested_url, :home_highlight)
     end
   end
 end

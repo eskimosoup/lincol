@@ -14,10 +14,10 @@
 }
 
 .industry-collection-name {
-  position: absolute;
-  top: 50%;
   left: 50%;
   margin: 0 0 0 -40%;
+  position: absolute;
+  top: 50%;
   width: 80%;
 
   .contrast-area {
@@ -25,9 +25,9 @@
     display: inline-block;
     font-size: em(13px);
     font-weight: $primary-font-semibold;
-    text-transform: uppercase;
     letter-spacing: 2px;
     padding: em(3px, 13px) em(24px, 13px);
+    text-transform: uppercase;
   }
 }
 
@@ -36,37 +36,45 @@
   background: $black;
   padding: em(30px) em(65px);
 
+  @include responsive-to(medium-down) {
+    padding: em(15px);
+  }
+
   ul {
     float: left;
     list-style: none;
-    width: 45%;
     margin-right: 5%;
+    width: 45%;
   }
 
   li {
-    color: $white;
     border-bottom: 1px solid $white;
+    color: $white;
     font-size: em(11px);
     padding: em(23px, 11px) 0 em(9px, 11px);
     width: 100%;
+
+    @include responsive-to(medium-down) {
+      padding: em(13px, 11px) 0 em(9px, 11px);
+    }
   }
 }
 
 .industry-banner {
-  position: relative;
   margin-bottom: em(20px);
-  
+  position: relative;
+
   img {
     position: relative;
     top: 0;
   }
 
   .title {
+    left: 50%;
+    margin-left: -40%;
     position: absolute;
     top: 50%;
-    left: 50%;
     width: 80%;
-    margin-left: -40%;
     z-index: 1;
   }
 
@@ -74,8 +82,8 @@
     display: inline-block;
     font-size: em(20px);
     font-weight: $primary-font-semibold;
-    padding: 0 em(35px, 20px);
     letter-spacing: 2px;
+    padding: 0 em(35px, 20px);
     text-transform: uppercase;
   }
 }

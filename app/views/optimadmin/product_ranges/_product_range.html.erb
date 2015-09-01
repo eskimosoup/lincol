@@ -1,7 +1,7 @@
 <div class="row collapse module-list-index <%= cycle('odd', 'even') %>" data-equalizer="module-list" id="item_<%= product_range_presenter.id %>">
 
 
-  <div class="large-3 small-6 columns" data-equalizer-watch="module-list">
+  <div class="large-2 small-6 columns" data-equalizer-watch="module-list">
     <%= product_range_presenter.title %>
   </div>
 
@@ -23,6 +23,10 @@
     <%= product_range_presenter.toggle_link %>
   </div>
 
+
+    <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
+      <%= product_range_presenter.toggle_link(:home_highlight) %>
+    </div>
 
   <div class="large-1 small-4 columns" data-equalizer-watch="module-list">
     <%= product_range_presenter.edit_link %>
