@@ -23,7 +23,7 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
 <div class="row">
   <div class="small-12 columns content-area separated">
     <%= render 'industries/header', industry: @industry if @industry.present? %>
-    
+
     <div class="inner">
       <ul class="breadcrumbs">
         <li>
@@ -62,10 +62,17 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
       </div>
 
       <div class="text-center">
-        <%= render partial: 'product_ranges/product_range',
-            collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
-            as: :product_range_presenter
-          %>
+        <% if @industry.home_highlight_product_ranges.size > 1 %>
+          <%= render partial: 'product_ranges/product_range',
+              collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
+              as: :product_range_presenter
+            %>
+        <% else %>
+          <%= render partial: 'products/product',
+              collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_products, view_template: self, presenter: ProductPresenter),
+              as: :product_presenter
+            %>
+        <% end %>
       </div>
     </div>
   </div>

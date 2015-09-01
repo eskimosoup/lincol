@@ -40,4 +40,8 @@ class IndustryPresenter < BasePresenter
   def displayable_frequently_asked_questions
     industry.frequently_asked_questions.displayable
   end
+
+  def home_highlight_products
+    industry.product_ranges.home_highlight.first.products.home_highlight
+  end
 end

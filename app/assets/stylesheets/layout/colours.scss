@@ -131,7 +131,9 @@
   }
 
   .product {
-    background: $black;
+    .product-title {
+      background: $black;
+    }
 
     hr {
       border-top-color: $primary-yellow;
@@ -281,7 +283,9 @@
   }
 
   .product {
-    background: $secondary-background;
+    .product-title {
+      background: $secondary-background;
+    }
 
     hr {
       border-bottom-color: $secondary-additional-color;

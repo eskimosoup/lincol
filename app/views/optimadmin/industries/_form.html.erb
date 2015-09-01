@@ -32,7 +32,7 @@
       </div>
             <div class="field">
         <%= f.label :colour %><br>
-        <%= f.select :colour, Industry::COLOURS, prompt: Industry::DEFAULT_COLOUR %>
+              <%= f.select :colour, Industry::COLOURS, include_blank: Industry::DEFAULT_COLOUR %>
       </div>
             <div class="field">
         <%= f.label :accreditations %><br>
