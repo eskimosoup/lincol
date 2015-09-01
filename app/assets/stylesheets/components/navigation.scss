@@ -131,6 +131,37 @@
   }
 }
 
+.sidebar.navigation {
+  background: $black;
+  margin: em(21px) 0 0;
+
+  @include responsive-to(small) {
+    margin: 0;
+  }
+
+  li {
+    display: block;
+    padding: em(2px, 12px) 0;
+  }
+
+  a {
+    color: $white;
+    border-bottom: 2px solid $white;
+    display: block;
+    font-size: em(12px);
+    font-weight: $primary-font-semibold;
+    letter-spacing: 1px;
+    padding: em(2px, 12px);
+    margin: em(2px, 12px) em(14px, 12px);
+
+    &:hover {
+      border-bottom-color: $grey;
+      color: $background-color;
+      text-decoration: none;
+    }
+  }
+}
+
 .footer.navigation {
   margin-top: em(25px);
 
