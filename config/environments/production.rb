@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.logger = Logger.new(config.paths['log'].first, 3, 5242880)
 
-  Rails.application.routes.default_url_options[:host] = 'www.ludo5.co.uk'
+  Rails.application.routes.default_url_options[:host] = 'www.lincol-oil.co.uk'
 
   ActionMailer::Base.delivery_method = :sendmail
   ActionMailer::Base.sendmail_settings = { :location => '/usr/lib/sendmail', :arguments => '-i' }
