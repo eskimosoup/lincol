@@ -52,6 +52,13 @@
       background: none;
     }
 
+
+    @include responsive-to(small) {
+      &:last-of-type {
+        background: transparent image-url('components/navigation/yellow-border.png') center right no-repeat;
+      }
+    }
+
     .level-1:hover,
     .level-1.active,
     ul {
@@ -202,6 +209,13 @@
     &:last-of-type,
     .dropdown li {
       background: none;
+    }
+
+
+    @include responsive-to(small) {
+      &:last-of-type {
+        background: transparent image-url('components/navigation/blue-border.png') center right no-repeat;
+      }
     }
 
     .level-1:hover,

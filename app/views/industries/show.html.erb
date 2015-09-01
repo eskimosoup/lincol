@@ -9,12 +9,16 @@ $(function() {
     autoplay: true,
     autoplaySpeed: 6000,
   });
+
+  $slider = $('.industry-banners');
+  if($slider[0].slick.slideCount === 0) {
+    $('.industry-banner-controls').hide();
+  }
 })
 
 $(document).on('click', '.industry-banner-control-link', function(e) {
   e.preventDefault();
   slideIndex = $(this).data('slide');
-  $slider = $('.industry-banners');
   $slider[0].slick.slickGoTo(parseInt(slideIndex));
 });
 </script>

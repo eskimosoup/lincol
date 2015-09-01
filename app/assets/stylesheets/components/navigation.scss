@@ -4,6 +4,11 @@
   padding: 0 em(12px);
   margin: em(6px) 0 0;
   width: 86%;
+
+  @include responsive-to(small) {
+    background: $black !important;
+    width: 100%;
+  }
 }
 
 .navigation {
@@ -12,6 +17,30 @@
   ul {
     list-style: none;
     display: none;
+  }
+}
+
+.menu-toggle {
+  background: $black;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  padding: em(12px);
+  margin: 0 0 em(15px);
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $white;
+  }
+
+  .menu-icon {
+    background: transparent image-url('components/navigation/hamburger.png') center left no-repeat;
+    display: inline-block;
+    line-height: 32px;
+    min-height: 32px;
+    padding-left: em(42px);
   }
 }
 
@@ -24,9 +53,20 @@
   height: 38px;
   padding: 0 em(20px);
 
+  @include responsive-to(small) {
+    background: $black !important;
+    height: auto;
+    margin: em(2px) 0 em(10px);
+    width: 100%;
+  }
+
   li {
     float: left;
     position: relative;
+
+    @include responsive-to(small) {
+      float: none;
+    }
 
     &:hover ul {
       display: block;
@@ -61,6 +101,11 @@
   top: 94%;
   text-align: left;
   z-index: 3;
+
+  @include responsive-to(small) {
+    min-width: inherit;
+    width: 100%;
+  }
 
   li {
     display: block;

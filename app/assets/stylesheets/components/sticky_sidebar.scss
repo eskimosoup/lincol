@@ -12,6 +12,10 @@
     width: 50%;
   }
 
+  @include responsive-to(small) {
+    width: 90%;
+  }
+
   a {
     color: $white;
     font-size: em(12px);

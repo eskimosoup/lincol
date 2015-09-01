@@ -10,6 +10,10 @@ module Optimadmin
       page.title
     end
 
+    def toggle_title
+      inline_detail_toggle_link(title)
+    end
+
     def industry
       page.industry.name if page.industry.present?
     end

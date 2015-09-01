@@ -16,6 +16,8 @@
 //= require components/toggle_class
 //= require vendor/foundation/foundation
 //= require vendor/jquery.matchheight
+//= require vendor/jquery-ui
+//= require vendor/doubletaptogo
 //= require slick.js.js
 //= require colorbox
 // require_tree .
@@ -30,4 +32,6 @@ $(function() {
     width: "550px",
     height: "500px"
   });
+
+  $('.navigation').doubleTapToGo();
 });

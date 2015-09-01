@@ -18,6 +18,12 @@ footer {
   }
 }
 
+@include responsive-to(small) {
+  .footer-callback-request {
+    display: block;
+  }
+}
+
 .footer-content .contrast-area {
   position: relative;
   top: -60px;
@@ -25,7 +31,6 @@ footer {
   h6 {
     font-size: em(16px);
     font-weight: $primary-font-semibold;
-    margin: 0;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;

@@ -12,7 +12,7 @@
   </div>
 
   <div class="row footer-content">
-    <div class="small-6 medium-3 columns content-area">
+    <div class="small-12 medium-3 columns content-area">
       <h6 class="header-color uppercase">Don't hesitate to call us today</h6>
 
       <p>
@@ -22,11 +22,11 @@
       <p class="uppercase">
         Tel: <strong><%= global_site_settings['Phone'] %></strong>
 
-        <%= link_to 'Request a callback', callback_form_contacts_path, class: 'colorbox-iframe' %>
+        <%= link_to 'Request a callback', callback_form_contacts_path, class: 'colorbox-iframe footer-callback-request' %>
       </p>
     </div>
 
-    <div class="small-6 medium-6 columns">
+    <div class="small-12 medium-6 columns">
       <div class="footer contrast-area border-top">
         <h6>Contact Us</h6>
 
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="small-6 medium-3 columns content-area">
+    <div class="small-12 medium-3 columns content-area">
       <p>
         <strong class="display-block">Registered Office</strong>
         <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
