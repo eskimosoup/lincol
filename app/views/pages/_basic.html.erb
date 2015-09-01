@@ -15,7 +15,7 @@
       </ul>
     </div>
 
-    <div class="inner padded">
+    <div class="inner <%= 'padded' if @side_menus.count.zero? %>">
       <div class="text-center">
         <h1 class="page-title-header">
           <%= @presented_page.title %>
@@ -28,9 +28,26 @@
         </div>
       <% end %>
 
-      <div class="inner-content-area">
-        <%= @presented_page.content %>
-      </div>
+      <% if @side_menus.count.zero? %>
+        <div class="inner-content-area">
+          <%= @presented_page.content %>
+        </div>
+      <% else %>
+        <div class="row">
+          <div class="small-12 medium-3 columns">
+            <ul class="navigation sidebar">
+              <%= nested_menu_items(menu_items: @side_menus.last.related_menu_items(@page)) %>
+            </ul>
+          </div>
+
+          <div class="small-12 medium-9 columns">
+            <div class="inner-content-area">
+              <%= @presented_page.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </div>

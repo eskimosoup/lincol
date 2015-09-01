@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  include MenuResourceable
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :history]
 
