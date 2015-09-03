@@ -1,6 +1,7 @@
 module Optimadmin
   class ProductsController < Optimadmin::ApplicationController
-    before_action :set_product_range, except: [:create, :edit, :update, :destroy]
+    #before_action :set_product_range, except: [:create, :edit, :update, :destroy]
+    before_action :set_product_range, only: [:index, :show, :new]
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     edit_images_for Product, [[:image, { show: ['fill', 203, 164], full: ['fit', 960, 480] }]]
