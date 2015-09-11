@@ -23,7 +23,7 @@
         <%= @industry.name %>
       </div>
 
-      <div class="text-center">
+      <div class="text-center clearfix">
         <%= render partial: 'product_ranges/product_range',
             collection: BaseCollectionPresenter.new(collection: @industry.displayable_product_ranges, view_template: self, presenter: ProductRangePresenter),
             as: :product_range_presenter
