@@ -23,3 +23,7 @@
   width: 80%;
   text-transform: uppercase;
 }
+
+.clearfix {
+  @extend %clearfix;
+}
