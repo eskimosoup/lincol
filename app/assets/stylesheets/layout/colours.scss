@@ -6,7 +6,8 @@
   h5,
   h6,
   p,
-  .product-technical-specification-download {
+  .product-technical-specification-download,
+  .years-emphasis {
     color: $black;
   }
 
@@ -182,7 +183,8 @@
     }
   }
 
-  .color {
+  .color,
+  .years-emphasis {
     color: $secondary-default-header-color;
   }
 
