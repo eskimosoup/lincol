@@ -13,6 +13,16 @@ class Page < ActiveRecord::Base
   validates :title, :content, presence: true
   validates :suggested_url, allow_blank: true, uniqueness: { message: 'is not unique, leave this blank to generate automatically' }
 
+  before_save :update_page_name
+
+  def update_page_name
+    if self.industry.present?
+      self.name = "#{self.title} (#{self.industry.name})"
+    else
+      self.name = self.title
+    end
+  end
+
   def slug_candidates
     [
       :suggested_url,
