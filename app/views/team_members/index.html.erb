@@ -21,14 +21,7 @@
         <%= @additional_content.content %>
       </div>
 
-
-      <% @team_members.each do |group, team_members| %>
-        <h2 class="team-members-job-title"><%= group %></h2>
-
-        <% team_members.each do |team_member| %>
-          <%= render 'team_members/team_member', team_member_presenter: TeamMemberPresenter.new(object: team_member, view_template: self) %>
-        <% end %>
-      <% end %>
+      <%= render partial: 'team_members/team_member', collection: @team_members, as: :team_member_presenter %>
     </div>
   </div>
 </div>
