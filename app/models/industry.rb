@@ -1,7 +1,7 @@
 class Industry < ActiveRecord::Base
   mount_uploader :image, IndustryUploader
 
-  COLOURS = %w( blue )
+  COLOURS = %w( blue red )
   DEFAULT_COLOUR = 'yellow'
 
   validates :name, :image, presence: true
