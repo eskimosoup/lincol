@@ -1,0 +1,1 @@
+!function(e,t,n,i,r,o){i=e.gapi||(e.gapi={}),i.analytics={q:[],ready:function(e){this.q.push(e)}},r=t.createElement(n),o=t.getElementsByTagName(n)[0],r.src="https://apis.google.com/js/platform.js",o.parentNode.insertBefore(r,o),r.onload=function(){i.load("analytics")}}(window,document,"script");

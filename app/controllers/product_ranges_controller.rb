@@ -2,6 +2,7 @@ class ProductRangesController < ApplicationController
   before_action :set_product_range, only: :show
 
   def index
+    @static_page_menu_items = Optimadmin::Link.related_menu_items('Product Ranges', @industry.menu)
   end
 
   def show

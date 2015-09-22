@@ -6,7 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :global_site_settings, :load_industry, :load_objects
 
   def index
-    render 'industries/show' if @industry.present?
+    if @industry.present?
+      @static_page_menu_items = Optimadmin::Link.related_menu_items('Product Ranges', @industry.menu)
+      render 'industries/show'
+    end
     @industries = BaseCollectionPresenter.new(collection: Industry.displayable, view_template: view_context, presenter: IndustryPresenter) unless @industry.present?
   end
 

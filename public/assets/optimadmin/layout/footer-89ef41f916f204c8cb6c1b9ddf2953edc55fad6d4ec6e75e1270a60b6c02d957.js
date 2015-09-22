@@ -1,0 +1,1 @@
+Modernizr.mq("only screen and (min-width: 1024px)")&&$(document).foundation("equalizer","reflow"),$(function(){$(".datetimepicker").datetimepicker({format:"d-m-Y H:i",minTime:"07:00",maxTime:"20:00",step:15})});
