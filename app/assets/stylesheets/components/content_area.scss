@@ -9,7 +9,7 @@
     }
 
     &.padded {
-      padding: em(40px);
+      padding: em(40px) 0;
 
       @include responsive-to(medium-down) {
         padding: em(10px) 0;

@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product
 
   def show
+    @static_page_menu_items = Optimadmin::Link.related_menu_items('Product Ranges', @industry.menu)
     return redirect_to product_range_product_path(@product_range_object, @product_object), status: :moved_permanently if request.path != product_range_product_path(@product_range_object, @product_object)
   end
 

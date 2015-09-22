@@ -30,31 +30,41 @@
       </div>
 
       <div class="row">
-        <div class="small-12 medium-4 columns">
-          <div class="product-image-area text-center">
-            <%= @product.colorbox_image %>
-            <%= link_to 'Click to enlarge', @product.image_url('full'), class: 'colorbox product-colorbox-image-prompt', title: @product.title %>
-          </div>
+        <div class="small-12 medium-3 columns">
+          <ul class="navigation sidebar">
+            <%= nested_menu_items(menu_items: @static_page_menu_items) %>
+          </ul>
         </div>
 
-        <div class="small-12 medium-8 columns">
-          <h1 class="product-show-title"><%= @product.title %></h1>
+        <div class="small-12 medium-9 columns">
+          <div class="row">
+            <div class="small-12 medium-8 columns">
+              <h1 class="product-show-title"><%= @product.title %></h1>
 
-          <div class="inner-content-area">
-            <%= @product.description %>
-          </div>
-
-          <%= @product.download_technical_specification %>
-
-          <% if @product.has_video? %>
-            <div class="product-video flex-video">
-              <div class="product-video-title">
-                Watch <%= @product.title %> in Action
+              <div class="inner-content-area">
+                <%= @product.description %>
               </div>
 
-              <%= @product.show_video %>
+              <%= @product.download_technical_specification %>
+
+              <% if @product.has_video? %>
+                <div class="product-video flex-video">
+                  <div class="product-video-title">
+                    Watch <%= @product.title %> in Action
+                  </div>
+
+                  <%= @product.show_video %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
+
+            <div class="small-12 medium-4 columns">
+              <div class="product-image-area text-center">
+                <%= @product.colorbox_image %>
+                <%= link_to 'Click to enlarge', @product.image_url('full'), class: 'colorbox product-colorbox-image-prompt', title: @product.title %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

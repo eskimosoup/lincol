@@ -5,10 +5,12 @@ class ProductRangesController < ApplicationController
   end
 
   def show
+    @static_page_menu_items = Optimadmin::Link.related_menu_items('Product Ranges', @industry.menu)
     return redirect_to @product_range_object, status: :moved_permanently if request.path != product_range_path(@product_range_object)
   end
 
   def technical_specification_downloads
+    @static_page_menu_items = Optimadmin::Link.related_menu_items('Technical Specification Downloads', @industry.menu)
     @products = Product.technical_specification_downloads.group_by(&:product_range)
   end
 
