@@ -9,7 +9,7 @@
     }
 
     &.padded {
-      padding: em(40px);
+      padding: em(40px) 0;
 
       @include responsive-to(medium-down) {
         padding: em(10px) 0;
@@ -20,6 +20,10 @@
   &.separated {
     margin: 0 auto em(20px);
   }
+}
+
+.inner-content-area h2 {
+  clear: both;
 }
 
 .page-title-header {

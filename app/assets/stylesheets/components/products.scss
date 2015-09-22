@@ -1,10 +1,10 @@
 .product {
   display: block;
   float: left;
-  margin: em(15px) em(5px);
+  margin: em(15px) em(5px) 0;
   text-decoration: none;
   color: $content-background-color;
-  max-width: 203px;
+  max-width: 188px;
 
   &:link,
   &:visited,

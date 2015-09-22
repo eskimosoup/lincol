@@ -40,16 +40,28 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
       </ul>
     </div>
 
-    <div class="inner padded text-center">
-      <div class="page-title-header">
-        <%= @product_range.title %>
+    <div class="inner padded">
+      <div class="text-center">
+        <div class="page-title-header">
+          <%= @product_range.title %>
+        </div>
       </div>
 
-      <div class="text-center">
-        <%= render partial: 'products/product',
-            collection: BaseCollectionPresenter.new(collection: @product_range.displayable_products, view_template: self, presenter: ProductPresenter),
-            as: :product_presenter
-          %>
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <ul class="navigation sidebar">
+            <%= nested_menu_items(menu_items: @static_page_menu_items) %>
+          </ul>
+        </div>
+
+        <div class="small-12 medium-9 columns">
+          <div class="text-center clearfix">
+            <%= render partial: 'products/product',
+                collection: BaseCollectionPresenter.new(collection: @product_range.displayable_products, view_template: self, presenter: ProductPresenter),
+                as: :product_presenter
+              %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

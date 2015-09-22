@@ -25,14 +25,24 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <ul class="navigation sidebar">
+            <%= nested_menu_items(menu_items: @static_page_menu_items) %>
+          </ul>
+        </div>
 
-      <% @products.each do |group, products| %>
-        <h2 class="product-show-title"><%= group.title %></h2>
+        <div class="small-12 medium-9 columns">
+          <% @products.each do |group, products| %>
+            <h2 class="product-show-title"><%= group.title %></h2>
 
-        <% products.each do |product| %>
-          <%= render 'products/download_link', product_presenter: ProductPresenter.new(object: product, view_template: self) %>
-        <% end %>
-      <% end %>
+            <% products.each do |product| %>
+              <%= render 'products/download_link', product_presenter: ProductPresenter.new(object: product, view_template: self) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

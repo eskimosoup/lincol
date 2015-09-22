@@ -1,8 +1,10 @@
 .product-range {
-  display: inline-block;
+  display: block;
+  float: left;
   border-bottom-width: 3px;
   border-bottom-style: solid;
   margin: em(15px) em(5px);
+  max-width: 188px;
 }
 
 .product-range-content {

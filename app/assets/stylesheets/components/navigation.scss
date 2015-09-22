@@ -160,6 +160,11 @@
       text-decoration: none;
     }
   }
+
+  .dropdown {
+    display: block;
+    margin: em(2px);
+  }
 }
 
 .footer.navigation {

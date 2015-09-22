@@ -60,24 +60,37 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
 
 <div class="row">
   <div class="small-12 columns content-area separated">
-    <div class="inner padded text-center">
-      <div class="page-title-header">
-        <%= @industry.name %>
+    <div class="inner padded">
+      <div class="text-center">
+        <div class="page-title-header">
+          <%= @industry.name %>
+        </div>
       </div>
 
-      <div class="text-center">
-        <% if @industry.home_highlight_product_ranges.size > 1 %>
-          <%= render partial: 'product_ranges/product_range',
-              collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
-              as: :product_range_presenter
-            %>
-        <% else %>
-          <%= render partial: 'products/product',
-              collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_products, view_template: self, presenter: ProductPresenter),
-              as: :product_presenter
-            %>
-        <% end %>
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <ul class="navigation sidebar">
+            <%= nested_menu_items(menu_items: @static_page_menu_items) %>
+          </ul>
+        </div>
+
+        <div class="small-12 medium-9 columns">
+          <div class="text-center clearfix">
+            <% if @industry.home_highlight_product_ranges.size > 1 %>
+              <%= render partial: 'product_ranges/product_range',
+                  collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
+                  as: :product_range_presenter
+                %>
+            <% else %>
+              <%= render partial: 'products/product',
+                  collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_products, view_template: self, presenter: ProductPresenter),
+                  as: :product_presenter
+                %>
+            <% end %>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
