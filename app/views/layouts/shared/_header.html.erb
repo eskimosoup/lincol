@@ -9,30 +9,32 @@
 </div>
 
 <header class="row collapse content-area">
-  <div class="small-12 text-center medium-2 columns">
-    <%= logo_link @industry %>
-  </div>
-
-  <div class="small-12 medium-10 columns">
-    <div class="header-introduction">
-      <div class="tagline">
-        "Supplying a wide range of lubricants for over <span class="years-emphasis">100 years</span>"
-      </div>
-
-      <div class="call text-right">
-        <strong class="display-block">Place your order today</strong>
-        <strong>Tel:</strong> <%= global_site_settings['Phone'] %>
-      </div>
+  <div class="border-wrap">
+    <div class="small-12 text-center medium-2 columns">
+      <%= logo_link @industry %>
     </div>
 
-    <div class="header-navigation">
-      <%= link_to '#', class: 'show-for-small toggle-class menu-toggle', data: { container: '.primary.navigation', class: 'hide-for-small', return: 'true' } do %>
-       <span class="menu-icon">Menu</span>
-      <% end %>
+    <div class="small-12 medium-10 columns">
+      <div class="header-introduction">
+        <div class="tagline">
+          "Supplying a wide range of lubricants for over <span class="years-emphasis">100 years</span>"
+        </div>
 
-      <ul class="primary navigation hide-for-small">
-        <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
-      </ul>
+        <div class="call text-right">
+          <strong class="display-block">Place your order today</strong>
+          <strong>Tel:</strong> <%= global_site_settings['Phone'] %>
+        </div>
+      </div>
+
+      <div class="header-navigation">
+        <%= link_to '#', class: 'show-for-small toggle-class menu-toggle', data: { container: '.primary.navigation', class: 'hide-for-small', return: 'true' } do %>
+         <span class="menu-icon">Menu</span>
+        <% end %>
+
+        <ul class="primary navigation hide-for-small">
+          <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

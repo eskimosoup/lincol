@@ -1,4 +1,6 @@
 .yellow {
+  background: $background-color;
+
   h1,
   h2,
   h3,
@@ -43,6 +45,10 @@
 
   .header-navigation {
     background-image: image-url('components/navigation/yellow-left-angle.png'), image-url('components/navigation/yellow-right-angle.png');
+  }
+
+  header .border-wrap {
+    border-bottom-color: $main-navigation-background;
   }
 
   .primary.navigation li {
@@ -159,6 +165,8 @@
 }
 
 .blue {
+  background: darken($background-color, 15%);
+
   h1,
   h2,
   h3,
@@ -168,6 +176,12 @@
   p,
   .product-technical-specification-download {
     color: $secondary-default-text-color;
+  }
+
+
+
+  header .border-wrap {
+    border-bottom-color: $secondary-navigation-background;
   }
 
   .sticky-contact .toggle-class {
@@ -334,6 +348,8 @@
 }
 
 .red {
+  background: darken($background-color, 25%);
+
   h1,
   h2,
   h3,
@@ -343,6 +359,10 @@
   .product-technical-specification-download,
   .years-emphasis {
     color: $primary-red;
+  }
+
+  header .border-wrap {
+    border-bottom-color: $primary-red;
   }
 
   p {
@@ -401,7 +421,7 @@
     .level-1:hover,
     .level-1.active,
     ul {
-      background: $main-navigation-hover;
+      background: $cassida-blue;
     }
   }
 
@@ -469,6 +489,7 @@
   .product-range,
   .team-member,
   .frequently-asked-question {
+    border-top-color: $cassida-blue;
     border-bottom-color: $cassida-blue;
   }
 
@@ -478,7 +499,7 @@
 
   .product {
     .product-title {
-      background: $black;
+      background: $primary-red;
     }
 
     hr {

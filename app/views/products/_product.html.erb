@@ -1,12 +1,12 @@
 <%= link_to product_range_product_path(product_presenter.product_range, product_presenter.link), class: 'product' do %>
   <div class="product-content">
-    <%= product_presenter.image %>
-
     <hr />
+    <%= product_presenter.image %>
 
     <div class="product-title">
       <%= product_presenter.title %>
     </div>
+    <hr />
   </div>
   <!--
   <div class="product-summary">

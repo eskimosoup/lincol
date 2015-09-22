@@ -41,12 +41,6 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
     </div>
 
     <div class="inner padded">
-      <div class="text-center">
-        <div class="page-title-header">
-          <%= @product_range.title %>
-        </div>
-      </div>
-
       <div class="row">
         <div class="small-12 medium-3 columns">
           <ul class="navigation sidebar">
@@ -55,6 +49,12 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
         </div>
 
         <div class="small-12 medium-9 columns">
+          <div class="text-center">
+            <div class="page-title-header">
+              <%= @product_range.title %>
+            </div>
+          </div>
+          
           <div class="text-center clearfix">
             <%= render partial: 'products/product',
                 collection: BaseCollectionPresenter.new(collection: @product_range.displayable_products, view_template: self, presenter: ProductPresenter),

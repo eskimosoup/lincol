@@ -2,6 +2,11 @@
   <div class="industry-banner text-center">
     <%= industry.image('header') %>
     <div class="title">
+      <% if industry.colour && industry.colour == 'red' %>
+        <div class="cassida-logo">
+          <%= image_tag 'components/icons/cassida.png' %>
+        </div>
+      <% end %>
       <div class="contrast-area">
         <%= industry.name %>
       </div>

@@ -23,12 +23,6 @@
     </div>
 
     <div class="inner padded">
-      <div class="text-center">
-        <div class="page-title-header">
-          <%= @product_range.title %>
-        </div>
-      </div>
-
       <div class="row">
         <div class="small-12 medium-3 columns">
           <ul class="navigation sidebar">
@@ -36,7 +30,13 @@
           </ul>
         </div>
 
-        <div class="small-12 medium-9 columns">
+        <div class="small-12 medium-9 columns">          
+          <div class="text-center">
+            <div class="page-title-header">
+              <%= @product_range.title %>
+            </div>
+          </div>
+
           <div class="row">
             <div class="small-12 medium-8 columns">
               <h1 class="product-show-title"><%= @product.title %></h1>

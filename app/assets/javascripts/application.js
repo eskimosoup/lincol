@@ -33,11 +33,9 @@ $(function() {
     height: "500px"
   });
 
-  /*
-  $('.product').matchHeight({
+  $('.product, .product-range').matchHeight({
     byRow: false
   });
-  */
 
   $('.navigation').doubleTapToGo();
 });

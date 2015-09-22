@@ -63,6 +63,7 @@
 .industry-banner {
   margin-bottom: em(20px);
   position: relative;
+  min-height: 80px;
 
   img {
     position: relative;
@@ -72,7 +73,7 @@
   .title {
     left: 61px;
     position: absolute;
-    bottom: 30px;
+    bottom: 15px;
     width: 100%;
     z-index: 1;
     text-align: left;
@@ -86,4 +87,8 @@
     padding: em(10px, 20px) em(35px, 20px);
     text-transform: uppercase;
   }
+}
+
+.cassida-logo {
+  margin-bottom: em(10px);
 }
