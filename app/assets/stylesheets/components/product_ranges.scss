@@ -1,6 +1,8 @@
 .product-range {
   display: block;
   float: left;
+  border-top-width: 3px;
+  border-top-style: solid;
   border-bottom-width: 3px;
   border-bottom-style: solid;
   margin: em(15px) em(5px);
@@ -14,15 +16,19 @@
 
 .product-range-title {
   color: $white;
+  /*
   position: absolute;
   top: 50%;
   left: 50%;
+  */
   font-weight: $primary-font-bold;
   letter-spacing: 2px;
   font-size: em(11px);
   padding: em(10px, 11px);
+/*
   margin-left: -40%;
-  width: 80%;
+  */
+  width: 100%;
   text-transform: uppercase;
 }
 

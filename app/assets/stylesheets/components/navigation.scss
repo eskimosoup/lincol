@@ -2,8 +2,8 @@
   background-position: top left, top right;
   background-repeat: no-repeat;
   padding: 0 em(12px);
-  margin: em(6px) 0 0;
-  width: 86%;
+  margin: em(12px) 0 0;
+  width: 90%;
 
   @include responsive-to(small) {
     background: $black !important;
@@ -79,13 +79,12 @@
     font-size: em(13px);
     margin: 0 em(6px, 13px);
     padding: em(13px, 13px) em(8px, 13px);
+    max-height: 38px;
 
     &:hover,
     &.active {
-      padding: em(13px, 13px) em(8px, 13px) em(15px, 13px);
-      position: relative;
       text-decoration: none;
-      top: -3px;
+      //top: -3px;
     }
   }
 }
@@ -132,8 +131,7 @@
 }
 
 .sidebar.navigation {
-  background: $black;
-  margin: em(21px) 0 0;
+  margin: 0;
 
   @include responsive-to(small) {
     margin: 0;
@@ -145,24 +143,20 @@
   }
 
   a {
-    color: $white;
-    border-bottom: 2px solid $white;
+    border-bottom: 2px dotted $grey;
     display: block;
     font-size: em(12px);
     font-weight: $primary-font-semibold;
     letter-spacing: 1px;
-    padding: em(2px, 12px);
     margin: em(2px, 12px) em(14px, 12px);
 
     &:hover {
-      border-bottom-color: $grey;
-      color: $background-color;
+      border-bottom-color: $background-color;
       text-decoration: none;
     }
 
     &.active {
-      background: $main-additional-color;
-      padding: em(2px, 12px) em(5px, 12px);
+      font-weight: $primary-font-bold;
     }
   }
 

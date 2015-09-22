@@ -5,6 +5,10 @@ class PagePresenter < BasePresenter
     page.title
   end
 
+  def colour
+    'yellow'
+  end
+
   # used for industry header
   def name
     title
