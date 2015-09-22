@@ -236,7 +236,7 @@
   }
 
   .contrast-area {
-    background: $secondary-background;
+    background: $black;
 
     &.border-top {
       border-top-color: $primary-blue
@@ -318,7 +318,8 @@
 }
 
 .blue,
-.yellow {
+.yellow,
+.red {
   .contrast-area {
     h1,
     h2,
@@ -329,5 +330,168 @@
     p {
       color: $white;
     }
+  }
+}
+
+.red {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .product-technical-specification-download,
+  .years-emphasis {
+    color: $primary-red;
+  }
+
+  p {
+    color: $black;
+  }
+
+  .sticky-contact .toggle-class {
+    background-image: image-url('layout/header/red-contact-arrow.png');
+  }
+
+  .frequently-asked-question .question a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $primary-red;
+    }
+  }
+
+  .color {
+    color: $primary-red;
+  }
+
+  footer input[type='text'],
+  footer textarea {
+    border: 1px solid $cassida-blue;
+  }
+
+  .header-color {
+    color: $primary-red;
+  }
+
+  .primary.navigation {
+    background-color: $primary-red;
+  }
+
+  .header-navigation {
+    background-image: image-url('components/navigation/red-left-angle.png'), image-url('components/navigation/red-right-angle.png');
+  }
+
+  .primary.navigation li {
+    background: transparent image-url('components/navigation/red-border.png') center right no-repeat;
+
+    &:last-of-type,
+    .dropdown li {
+      background: none;
+    }
+
+
+    @include responsive-to(small) {
+      &:last-of-type {
+        background: transparent image-url('components/navigation/red-border.png') center right no-repeat;
+      }
+    }
+
+    .level-1:hover,
+    .level-1.active,
+    ul {
+      background: $main-navigation-hover;
+    }
+  }
+
+  .primary.navigation .dropdown li:hover {
+    background: transparent image-url('components/navigation/red-marker.png') center left no-repeat;
+
+    a {
+      border-color: $cassida-blue;
+    }
+  }
+
+  .contrast-area {
+    background: $primary-red;
+
+    &.border-top {
+      border-top-color: $cassida-blue;
+    }
+
+    &.border-bottom {
+      border-bottom-color: $cassida-blue;
+    }
+  }
+
+  .industry-banner-more-linked-text {
+    color: $main-additional-color;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $main-additional-color;
+    }
+  }
+
+  .industry-banner-content {
+    background-image: image-url('components/industry-banners/red-marker.png');
+  }
+
+  .industry-banner-controls {
+    border-bottom-color: $black;
+  }
+
+  .industry-banner-control-link {
+    &.link-1 {
+      background-color: $main-grey;
+      border-top-color: $primary-red;
+    }
+
+    &.link-2 {
+      background-color: $main-additional-color;
+      border-top-color: $primary-red;
+    }
+
+    &.link-3 {
+      background-color: $black;
+      border-top-color: $primary-red;
+    }
+  }
+
+  .page-title-header {
+    border-color: $cassida-blue;
+    color: $primary-red;
+  }
+
+  .product-range,
+  .team-member,
+  .frequently-asked-question {
+    border-bottom-color: $cassida-blue;
+  }
+
+  .product-range-title {
+    background: $primary-red;
+  }
+
+  .product {
+    .product-title {
+      background: $black;
+    }
+
+    hr {
+      border-top-color: $cassida-blue;
+    }
+  }
+
+  .product-show-title,
+  .team-members-job-title {
+    border-bottom-color: $cassida-blue;
+  }
+
+  .product-technical-specification-download-container {
+    border-bottom-color: $main-grey;
   }
 }

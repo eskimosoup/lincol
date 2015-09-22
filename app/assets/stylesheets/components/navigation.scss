@@ -159,6 +159,11 @@
       color: $background-color;
       text-decoration: none;
     }
+
+    &.active {
+      background: $main-additional-color;
+      padding: em(2px, 12px) em(5px, 12px);
+    }
   }
 
   .dropdown {

@@ -70,12 +70,12 @@
   }
 
   .title {
-    left: 50%;
-    margin-left: -40%;
+    left: 61px;
     position: absolute;
-    top: 50%;
-    width: 80%;
+    bottom: 30px;
+    width: 100%;
     z-index: 1;
+    text-align: left;
   }
 
   .contrast-area {
@@ -83,7 +83,7 @@
     font-size: em(20px);
     font-weight: $primary-font-semibold;
     letter-spacing: 2px;
-    padding: 0 em(35px, 20px);
+    padding: em(10px, 20px) em(35px, 20px);
     text-transform: uppercase;
   }
 }
