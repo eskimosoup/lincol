@@ -74,7 +74,7 @@ class MenuItemPresenter < BasePresenter
   end
 
   def menu_resource_route
-    menu_resource.route
+    menu_resource.route if menu_resource.respond_to?(:route)
   end
 
   def path_from_request
