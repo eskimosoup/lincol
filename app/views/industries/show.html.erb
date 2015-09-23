@@ -47,7 +47,7 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
             as: :industry_banner_presenter
           %>
       </div>
-      
+
       <div class="industry-banners">
         <%= render partial: 'industry_banners/industry_banner',
             collection: BaseCollectionPresenter.new(collection: @industry.displayable_banners, view_template: self, presenter: IndustryBannerPresenter),
@@ -63,7 +63,7 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
     <div class="inner padded">
       <div class="text-center">
         <div class="page-title-header">
-          <%= @industry.name %>
+          <%= two_tone_title @industry.name %>
         </div>
       </div>
 
