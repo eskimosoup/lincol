@@ -21,8 +21,13 @@
         </div>
 
         <div class="call text-right">
-          <strong class="display-block">Place your order today</strong>
-          <strong>Tel:</strong> <%= global_site_settings['Phone'] %>
+          <div class="text">
+            Place your
+            <strong class="display-block">order today</strong>
+          </div>
+          <div class="number color">
+            <%= global_site_settings['Phone'] %>
+          </div>
         </div>
       </div>
 
@@ -32,6 +37,7 @@
         <% end %>
 
         <ul class="primary navigation hide-for-small">
+          <%= @industry.home_link if @industry.present? %>
           <%= nested_menu_items(menu_items: @header_menu.menu_items) %>
         </ul>
       </div>

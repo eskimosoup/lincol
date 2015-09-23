@@ -2,7 +2,7 @@ header {
 
   .border-wrap {
     @extend %clearfix;
-    border-bottom-width: 2px;
+    border-bottom-width: 5px;
     border-bottom-style: solid;
     margin-bottom: em(20px);
   }
@@ -37,14 +37,35 @@ header {
 }
 
 .call {
-  background: $primary-yellow;
+  @extend %clearfix;
   float: right;
   font-weight: $primary-font-semibold;
   line-height: 1.1;
-  padding: em(9px) em(18px) em(11px);
-  margin-right: em(8px);
-  text-align: right;
+  padding: 0 em(52px) 0 0;
+  text-align: center;
   text-transform: uppercase;
+  min-width: 310px;
+  margin: em(8px) 0 0;
+
+  @media screen and (min-width: 480px) {
+    background: image-url('layout/header/telephone-icon.png') no-repeat right center;
+  }
+
+  .text {
+    float: left;
+    width: 50%;
+  }
+
+  .number {
+    @include border-radius(7px);
+    font-size: em(15px);
+    font-weight: $primary-font-bold;
+    float: right;
+    line-height: 1.4;
+    letter-spacing:  1px;
+    padding: em(5px);
+    width: 50%;
+  }
 
   @include responsive-to(small) {
     float: left;

@@ -1,6 +1,8 @@
 class Industry < ActiveRecord::Base
   mount_uploader :image, IndustryUploader
 
+  mount_uploader :home_banner_image, IndustryHomeBannerUploader
+
   COLOURS = %w( blue red )
   DEFAULT_COLOUR = 'yellow'
 

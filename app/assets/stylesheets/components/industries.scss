@@ -2,63 +2,60 @@
   border: 5px solid $white;
   display: block;
   margin: 0 0 em(30px);
+  position: relative;
+  height: 266px;
 
   &:hover {
     border: 5px solid $primary-yellow;
   }
 }
 
-.industry-collection-header {
-  position: relative;
-  text-align: center;
-}
+.industry-name {
+  color: $white;
+  font-size: em(18px);
+  font-weight: $primary-font-normal;
+  padding: 0 0 em(5px, 18px);
+  margin: 0 0 em(30px, 18px);
+  border-bottom: 3px solid $white;
 
-.industry-collection-name {
-  left: 50%;
-  margin: 0 0 0 -40%;
-  position: absolute;
-  top: 50%;
-  width: 80%;
-
-  .contrast-area {
-    border-bottom-width: 5px;
-    display: inline-block;
-    font-size: em(13px);
-    font-weight: $primary-font-semibold;
-    letter-spacing: 2px;
-    padding: em(3px, 13px) em(24px, 13px);
-    text-transform: uppercase;
+  span {
+    font-weight: $primary-font-extrabold;
   }
 }
 
-.industry-collection-product-ranges {
-  @extend %clearfix;
-  background: $black;
-  padding: em(30px) em(65px);
-
-  @include responsive-to(medium-down) {
-    padding: em(15px);
-  }
-
-  ul {
-    float: left;
-    list-style: none;
-    margin-right: 5%;
-    width: 45%;
-  }
+.industry-collection-content {
+  color: $white;
+  padding: em(35px) em(65px) em(15px) em(15px);
+  width: 75%;
+  height: 100%;
 
   li {
-    border-bottom: 1px solid $white;
-    color: $white;
-    font-size: em(11px);
-    padding: em(23px, 11px) 0 em(9px, 11px);
-    width: 100%;
+    font-size: em(12px);
+    font-weight: $primary-font-semibold;
+    margin: em(4px, 12px) 0;
+  }
 
-    @include responsive-to(medium-down) {
-      padding: em(13px, 11px) 0 em(9px, 11px);
+  &.red {
+    background: image-url('layout/home/red-bg.png') no-repeat top left;
+
+    span {
+      color: $cassida-blue;
     }
   }
+
+  &.blue {
+    background: image-url('layout/home/blue-bg.png') no-repeat top left;
+  }
+
+  &.white {
+    background: image-url('layout/home/white-bg.png') no-repeat top left;
+  }
+
+  &.gold {
+    background: image-url('layout/home/gold-bg.png') no-repeat top left;
+  }
 }
+
 
 .industry-banner {
   margin-bottom: em(20px);
@@ -71,12 +68,14 @@
   }
 
   .title {
-    left: 61px;
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    z-index: 1;
-    text-align: left;
+    @media screen and (min-width: 768px) {
+      left: 61px;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      z-index: 1;
+    }
+      text-align: left;
   }
 
   .contrast-area {
@@ -86,9 +85,18 @@
     letter-spacing: 2px;
     padding: em(10px, 20px) em(35px, 20px);
     text-transform: uppercase;
+
+    @media screen and (max-width: 768px) {
+      padding: em(5px, 20px);
+    }
   }
 }
 
 .cassida-logo {
   margin-bottom: em(10px);
+
+  @media screen and (max-width: 768px) {
+    width: 25%;
+    margin-bottom: em(2px);
+  }
 }
