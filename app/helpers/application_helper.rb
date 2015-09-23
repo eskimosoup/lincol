@@ -8,7 +8,7 @@ module ApplicationHelper
       last_words = title.split(' ')[1..length].join(' ')
       "<span class='first-word-emphasis'>#{first_word}</span> #{last_words}".html_safe
     else
-      "#{title}"
+      "<span class='first-word-emphasis'>#{title}</span>".html_safe
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923075538) do
+ActiveRecord::Schema.define(version: 20150923124824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,9 +57,10 @@ ActiveRecord::Schema.define(version: 20150923075538) do
     t.text     "accreditations"
     t.string   "subdomain"
     t.string   "menu"
-    t.boolean  "display",        default: true
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.boolean  "display",           default: true
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "home_banner_image"
   end
 
   create_table "industry_banners", force: :cascade do |t|

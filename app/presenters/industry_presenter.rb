@@ -17,8 +17,16 @@ class IndustryPresenter < BasePresenter
     industry.menu
   end
 
+  def home_link
+    h.content_tag :li, (h.link_to 'Home', link, title: name, class: "menu-link level-1 #{'active' if h.request.path == '/'}")
+  end
+
   def image(crop = 'show')
     h.image_tag industry.image.send(crop), alt: industry.name if industry.image?
+  end
+
+  def background_image(crop = 'show')
+    industry.home_banner_image.send(crop)
   end
 
   def colour

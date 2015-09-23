@@ -13,6 +13,10 @@
     color: $black;
   }
 
+  .call .number {
+    background: $black;
+  }
+
   .sticky-contact .toggle-class {
     background-image: image-url('layout/header/yellow-contact-arrow.png');
   }
@@ -43,9 +47,11 @@
     background-color: $main-navigation-background;
   }
 
+  /*
   .header-navigation {
     background-image: image-url('components/navigation/yellow-left-angle.png'), image-url('components/navigation/yellow-right-angle.png');
   }
+  */
 
   header .border-wrap {
     border-bottom-color: $main-navigation-background;
@@ -178,6 +184,10 @@
     color: $secondary-default-text-color;
   }
 
+  .call .number {
+    background: $secondary-default-text-color;
+    color: $white;
+  }
 
 
   header .border-wrap {
@@ -215,9 +225,11 @@
     background-color: $secondary-navigation-background;
   }
 
+  /*
   .header-navigation {
     background-image: image-url('components/navigation/blue-left-angle.png'), image-url('components/navigation/blue-right-angle.png');
   }
+  */
 
   .primary.navigation li {
     background: transparent image-url('components/navigation/blue-border.png') center right no-repeat;
@@ -365,6 +377,11 @@
     color: $primary-red;
   }
 
+  .call .number {
+    background: $primary-red;
+    color: $white;
+  }
+
   header .border-wrap {
     border-bottom-color: $primary-red;
   }
@@ -403,9 +420,11 @@
     background-color: $primary-red;
   }
 
+  /*
   .header-navigation {
     background-image: image-url('components/navigation/red-left-angle.png'), image-url('components/navigation/red-right-angle.png');
   }
+  */
 
   .primary.navigation li {
     background: transparent image-url('components/navigation/red-border.png') center right no-repeat;
@@ -470,17 +489,17 @@
 
   .industry-banner-control-link {
     &.link-1 {
-      background-color: $main-grey;
+      background-color: $cassida-blue;
       border-top-color: $primary-red;
     }
 
     &.link-2 {
-      background-color: $main-additional-color;
+      background-color: darken($cassida-blue, 10%);
       border-top-color: $primary-red;
     }
 
     &.link-3 {
-      background-color: $black;
+      background-color: darken($cassida-blue, 20%);
       border-top-color: $primary-red;
     }
   }

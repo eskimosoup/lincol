@@ -1,5 +1,6 @@
 class IndustryBanner < ActiveRecord::Base
   mount_uploader :image, IndustryBannerUploader
+  mount_uploader :home_banner_image, IndustryHomeBannerUploader
 
   validates :title, :button_text, :content, :industry, presence: true
 
