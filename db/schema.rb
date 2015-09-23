@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917134649) do
+ActiveRecord::Schema.define(version: 20150923075538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,6 +191,7 @@ ActiveRecord::Schema.define(version: 20150917134649) do
     t.integer  "products_count"
     t.boolean  "display",        default: true
     t.boolean  "home_highlight", default: true
+    t.integer  "position"
   end
 
   add_index "product_ranges", ["industry_id"], name: "index_product_ranges_on_industry_id", using: :btree
@@ -209,6 +210,7 @@ ActiveRecord::Schema.define(version: 20150917134649) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "home_highlight"
+    t.integer  "position"
   end
 
   add_index "products", ["product_range_id"], name: "index_products_on_product_range_id", using: :btree

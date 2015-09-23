@@ -300,6 +300,10 @@
   .page-title-header {
     border-color: $secondary-default-header-color;
     color: $secondary-background;
+
+    span {
+      color: $secondary-additional-color;
+    }
   }
 
   .product-range,
@@ -484,6 +488,10 @@
   .page-title-header {
     border-color: $cassida-blue;
     color: $primary-red;
+
+    span {
+      color: $cassida-blue;
+    }
   }
 
   .product-range,
