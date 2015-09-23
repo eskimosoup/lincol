@@ -11,7 +11,8 @@ class Product < ActiveRecord::Base
 
   belongs_to :product_range, counter_cache: true
 
-  scope :displayable, -> { where(display: true).order(:title) }
+  scope :positioned, -> { order(:position) }
+  scope :displayable, -> { where(display: true).positioned }
   scope :technical_specification_downloads, -> { where("technical_specification IS NOT NULL").displayable }
   scope :home_highlight, -> { where(home_highlight: true).displayable }
 

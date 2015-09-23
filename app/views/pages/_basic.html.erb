@@ -16,7 +16,7 @@
     </div>
 
     <div class="inner padded">
-      <% if @side_menus.count.zero? %>
+      <% if @side_menus.count.zero? || @side_menus.last.related_menu_items(@page).values[0].size < 1 %>
         <div class="text-center">
           <h1 class="page-title-header">
             <%= two_tone_title @presented_page.title %>
