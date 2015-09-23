@@ -11,7 +11,7 @@ class MenuItemPresenter < BasePresenter
 
   def link_to_webpage(additional_classes)
     return nil if destination.nil?
-    h.link_to name, destination, title: title_attribute, class: "#{classes} #{additional_classes}"
+    h.link_to name, destination, title: title_attribute, class: "#{ classes } #{ additional_classes }"
   end
 
   def classes
@@ -23,7 +23,7 @@ class MenuItemPresenter < BasePresenter
   private
 
   def active?
-    destination_evaluator.active? || active_descendants?
+    destination_evaluator.active? || active_descendants? || nested_route_from_self?
   end
 
   def descendants_array
@@ -63,4 +63,28 @@ class MenuItemPresenter < BasePresenter
   def destination_evaluator
     @destination_evaluator ||= MenuItemDestinationEvaluator.new(view_template: h, menu_resource: menu_resource)
   end
+
+  def nested_route_from_self?
+    path_from_request.keys.any?{|x| x.to_s == "#{ wrapped_route_for_resource }_id" }
+  end
+
+  def wrapped_route_for_resource
+    wrapped_route = wrapped_routes.detect{|x| ["#{ x.name }_path", "#{ x.name }_url"].include?(menu_resource_route) }
+    wrapped_route.name.singularize if wrapped_route
+  end
+
+  def menu_resource_route
+    menu_resource.route
+  end
+
+  def path_from_request
+    #returns a hash => controller, action, id, and parent_id (if applicable)
+    Rails.application.routes.recognize_path(h.request.path)
+  end
+
+  def wrapped_routes
+    @wrapped_routes ||= Rails.application.routes.routes.map{|x| ActionDispatch::Routing::RouteWrapper.new(x) }
+  end
+
+
 end
