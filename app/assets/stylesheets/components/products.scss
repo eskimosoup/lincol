@@ -10,13 +10,14 @@
   &:visited,
   &:hover,
   &:active {
-    border: 5px solid $content-background-color;
+    //border: 5px solid $content-background-color;
     color: $content-background-color;
     text-decoration: none;
   }
 
   &:hover {
-    border: 5px solid $primary-yellow;
+    //border: 5px solid $primary-yellow;
+    opacity: 0.9;
   }
 
   img {
