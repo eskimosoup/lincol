@@ -1,21 +1,23 @@
 .industry-collection-link {
-  border: 5px solid $white;
+  //border: 5px solid $white;
   display: block;
   margin: 0 0 em(30px);
   position: relative;
   height: 266px;
 
   &:hover {
-    border: 5px solid $primary-yellow;
+    //border: 5px solid $primary-yellow;
+    opacity: 0.9;
+    text-decoration: none;
   }
 }
 
 .industry-name {
   color: $white;
-  font-size: em(18px);
+  font-size: em(16px);
   font-weight: $primary-font-normal;
   padding: 0 0 em(5px, 18px);
-  margin: 0 0 em(30px, 18px);
+  margin: 0 0 em(32px, 18px);
   border-bottom: 3px solid $white;
 
   span {
@@ -24,10 +26,14 @@
 }
 
 .industry-collection-content {
+  padding: em(25px) em(65px) em(25px) em(25px);
   color: $white;
-  padding: em(35px) em(65px) em(15px) em(15px);
   width: 75%;
   height: 100%;
+
+  ul {
+    margin: 0 0 em(25px);
+  }
 
   li {
     font-size: em(12px);

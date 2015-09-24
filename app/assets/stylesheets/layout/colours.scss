@@ -1,6 +1,10 @@
 .yellow {
   background: $background-color;
 
+  .industry-banner img {
+    border: 1px solid $black;
+  }
+
   h1,
   h2,
   h3,
@@ -141,7 +145,11 @@
   }
 
   .product-range,
-  .team-member,
+  .team-member {
+    border-top-color: $primary-yellow;
+    border-bottom-color: $primary-yellow;
+  }
+
   .frequently-asked-question {
     border-bottom-color: $primary-yellow;
   }
@@ -173,6 +181,10 @@
 .blue {
   background: darken($background-color, 15%);
 
+  .industry-banner img {
+    border: 1px solid $secondary-background;
+  }
+
   h1,
   h2,
   h3,
@@ -191,7 +203,7 @@
 
 
   header .border-wrap {
-    border-bottom-color: $secondary-navigation-background;
+    border-bottom-color: $secondary-navigation-hover;
   }
 
   .sticky-contact .toggle-class {
@@ -222,7 +234,7 @@
   }
 
   .primary.navigation {
-    background-color: $secondary-navigation-background;
+    background-color: $secondary-navigation-hover;
   }
 
   /*
@@ -249,7 +261,7 @@
     .level-1:hover,
     .level-1.active,
     ul {
-      background: $secondary-navigation-hover;
+      background: $secondary-navigation-background;
     }
   }
 
@@ -262,7 +274,7 @@
   }
 
   .contrast-area {
-    background: $black;
+    background: $secondary-background;
 
     &.border-top {
       border-top-color: $primary-blue
@@ -319,13 +331,17 @@
   }
 
   .product-range,
-  .team-member,
+  .team-member {
+    border-top-color: $secondary-background;
+    border-bottom-color: $secondary-background;
+  }
+
   .frequently-asked-question {
     border-bottom-color: $secondary-background;
   }
 
   .product-range-title {
-    background: $secondary-additional-color;
+    background: $secondary-background;
   }
 
   .product {

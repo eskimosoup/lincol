@@ -5,7 +5,9 @@
         <%= two_tone_title industry_presenter.name %>
       </div>
 
+      <ul>
         <%= render partial: 'product_ranges/text_product_range', collection: BaseCollectionPresenter.new(collection: industry_presenter.displayable_product_ranges, view_template: self, presenter: ProductRangePresenter), as: :product_range_presenter %>
+      </ul>
     </div>
   <% end %>
 </div>
