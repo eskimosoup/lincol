@@ -1,13 +1,17 @@
 <div class="small-12 medium-6 columns">
-  <%= link_to industry_presenter.link, class: 'industry-collection-link', style: "background: url(#{industry_presenter.background_image('homepage')}) no-repeat top right" do %>
+  <%= link_to industry_presenter.link, class: 'industry-collection-link', style: "background: url(#{industry_presenter.background_image('homepage')}) no-repeat bottom left" do %>
     <div class="industry-collection-content <%= cycle('red', 'white', 'blue', 'gold') %>">
       <div class="industry-name">
         <%= two_tone_title industry_presenter.name %>
       </div>
 
+      <%= industry_presenter.summary %>
+
+      <!--
       <ul>
         <%= render partial: 'product_ranges/text_product_range', collection: BaseCollectionPresenter.new(collection: industry_presenter.displayable_product_ranges, view_template: self, presenter: ProductRangePresenter), as: :product_range_presenter %>
       </ul>
+      -->
     </div>
   <% end %>
 </div>

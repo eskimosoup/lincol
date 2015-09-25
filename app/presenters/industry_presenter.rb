@@ -54,6 +54,6 @@ class IndustryPresenter < BasePresenter
   end
 
   def summary
-    h.raw industry.summary
+    h.simple_format industry.summary
   end
 end

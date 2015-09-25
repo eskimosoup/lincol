@@ -382,6 +382,10 @@
 .red {
   background: darken($background-color, 25%);
 
+  .industry-banner img {
+    border: 1px solid $primary-red;
+  }
+
   h1,
   h2,
   h3,
