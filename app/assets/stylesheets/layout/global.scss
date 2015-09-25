@@ -1,36 +1,3 @@
-html,
-body {
-  font-size: 14px;
-}
-
-body {
-  color: $main-default-text-color;
-  font-family: $primary-font;
-}
-
-a {
-  color: $link-blue;
-  font-weight: $primary-font-semibold;
-  text-decoration: none;
-
-  &:link {
-    color: $link-blue;
-  }
-
-  &:visited {
-    color: $link-blue;
-  }
-
-  &:hover {
-    color: $link-blue;
-    text-decoration: underline;
-  }
-
-  &:active {
-    color: darken($link-blue, 15%);
-  }
-}
-
 .display-block {
   display: block;
 }

@@ -48,7 +48,7 @@ module Optimadmin
     end
 
     def industry_params
-      params.require(:industry).permit(:name, :image, :remove_image, :image_cache, :remote_image_url, :home_banner_image, :remove_home_banner_image, :home_banner_image_cache, :remote_home_banner_image_url, :display, :colour, :position, :accreditations, :subdomain, :menu)
+      params.require(:industry).permit(:name, :summary, :image, :remove_image, :image_cache, :remote_image_url, :home_banner_image, :remove_home_banner_image, :home_banner_image_cache, :remote_home_banner_image_url, :display, :colour, :position, :accreditations, :subdomain, :menu)
     end
   end
 end

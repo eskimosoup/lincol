@@ -35,6 +35,10 @@
               <%= f.select :colour, Industry::COLOURS, include_blank: Industry::DEFAULT_COLOUR %>
       </div>
             <div class="field">
+        <%= f.label :summary %><br>
+        <%= f.text_area :summary %>
+      </div>
+            <div class="field">
         <%= f.label :accreditations %><br>
         <%= f.text_area :accreditations, class: 'tinymce' %>
       </div>
