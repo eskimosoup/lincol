@@ -52,4 +52,8 @@ class IndustryPresenter < BasePresenter
   def home_highlight_products
     industry.product_ranges.home_highlight.first.products.home_highlight
   end
+
+  def summary
+    h.simple_format industry.summary
+  end
 end
