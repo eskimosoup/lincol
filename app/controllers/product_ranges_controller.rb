@@ -12,7 +12,7 @@ class ProductRangesController < ApplicationController
 
   def technical_specification_downloads
     @static_page_menu_items = Optimadmin::Link.related_menu_items('Technical Specification Downloads', @industry.menu)
-    @products = Product.technical_specification_downloads.group_by(&:product_range)
+    @products = Product.technical_specification_downloads(@industry.id).group_by(&:product_range)
   end
 
   private

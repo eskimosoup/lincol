@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
 
   scope :positioned, -> { order(:position) }
   scope :displayable, -> { where(display: true).positioned }
-  scope :technical_specification_downloads, -> { where("technical_specification IS NOT NULL").displayable }
+  scope :technical_specification_downloads, ->  (industry_id) { joins(:product_range).where("technical_specification IS NOT NULL AND product_ranges.industry_id = ?", industry_id).displayable }
   scope :home_highlight, -> { where(home_highlight: true).displayable }
 
   def slug_candidates
