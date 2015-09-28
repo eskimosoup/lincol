@@ -67,20 +67,23 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
         </div>
       </div>
 
-      <div class="text-center clearfix">
-        <% if @industry.home_highlight_product_ranges.size > 1 %>
-          <%= render partial: 'product_ranges/product_range',
-              collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
-              as: :product_range_presenter
-            %>
-        <% elsif @industry.home_highlight_products.present? %>
-          <%= render partial: 'products/product',
-              collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_products, view_template: self, presenter: ProductPresenter),
-              as: :product_presenter
-            %>
-        <% end %>
-      </div>
-
+      <% if @industry.introduction.present? %>
+        <%= @industry.introduction %>
+      <% else %>
+        <div class="text-center clearfix">
+          <% if @industry.home_highlight_product_ranges.size > 1 %>
+            <%= render partial: 'product_ranges/product_range',
+                collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_product_ranges, view_template: self, presenter: ProductRangePresenter),
+                as: :product_range_presenter
+              %>
+          <% elsif @industry.home_highlight_products.present? %>
+            <%= render partial: 'products/product',
+                collection: BaseCollectionPresenter.new(collection: @industry.home_highlight_products, view_template: self, presenter: ProductPresenter),
+                as: :product_presenter
+              %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
