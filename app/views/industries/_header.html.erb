@@ -1,15 +1,23 @@
 <% if defined? industry %>
   <div class="industry-banner text-center">
     <%= industry.image('header') %>
-    <div class="title">
-      <% if industry.colour && industry.colour == 'red' %>
+
+    <% if industry.colour && industry.colour == 'red' %>
+      <div class="title">
         <div class="cassida-logo">
           <%= image_tag 'components/icons/cassida.png' %>
         </div>
-      <% end %>
-      <div class="contrast-area">
+
+        <div class="contrast-area">
+          <%= industry.name %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if industry.colour && industry.colour != 'red' %>
+      <div class="contrast-area full-width">
         <%= industry.name %>
       </div>
-    </div>
+    <% end %>
   </div>
 <% end %>

@@ -148,6 +148,11 @@
     @media screen and (max-width: 768px) {
       padding: em(5px, 20px);
     }
+
+    &.full-width {
+      max-width: 813px;
+      width: 100%;
+    }
   }
 }
 
