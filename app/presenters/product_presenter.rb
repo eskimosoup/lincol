@@ -22,7 +22,8 @@ class ProductPresenter < BasePresenter
   end
 
   def download_technical_specification(text = 'Download The Technical Specification File')
-    h.link_to text, h.download_form_contacts_path(id: id), class: 'product-technical-specification-download colorbox-iframe'
+    h.link_to text, h.download_form_contacts_path(id: id),
+              class: 'product-technical-specification-download colorbox-iframe' if product.technical_specification.present?
   end
 
   def product_range
