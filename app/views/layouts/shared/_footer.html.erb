@@ -37,12 +37,14 @@
     <div class="small-12 medium-3 columns content-area">
       <p>
         <strong class="display-block">Registered Office</strong>
-        <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
+        <span class="address">
+          <%= global_site_settings['Address'].gsub(', ', '<br />').html_safe if global_site_settings['Address'] %>
+        </span>
       </p>
 
       <p class="legal">
-        Company Registration No:<br />
-        189921 Registered in England
+        Company Registration No: 189921<br />
+        Registered in England
       </p>
     </div>
   </div>
