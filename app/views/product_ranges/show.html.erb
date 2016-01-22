@@ -55,7 +55,9 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
             </div>
           </div>
 
-          <div class="text-center clearfix">
+
+          <div class="clearfix<%= ' text-center ' unless @product_range.displayable_products.blank? %>">
+            <%= @product_range.summary if @product_range.displayable_products.blank? %>
             <%= render partial: 'products/product',
                 collection: BaseCollectionPresenter.new(collection: @product_range.displayable_products, view_template: self, presenter: ProductPresenter),
                 as: :product_presenter
