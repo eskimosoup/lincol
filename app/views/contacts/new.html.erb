@@ -47,11 +47,11 @@
 
             <p>
               <strong class="display-block">Registered Office</strong>
-              <%= global_site_settings['Address'].gsub(', ', ',<br />').html_safe if global_site_settings['Address'] %>
+              <%= global_site_settings['Address'].gsub(', ', '<br />').html_safe if global_site_settings['Address'] %>
             </p>
 
             <p class="legal">
-              <strong class="display-block">Company Registration No</strong>
+              Company Registration No:
               189921 <br />
               Registered in England
             </p>

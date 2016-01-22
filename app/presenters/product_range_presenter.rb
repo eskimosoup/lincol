@@ -5,6 +5,10 @@ class ProductRangePresenter < Optimadmin::BasePresenter
     product_range.id
   end
 
+  def summary
+    h.raw product_range.summary
+  end
+
   def title
     product_range.title
   end
