@@ -6,7 +6,7 @@ Rails.application.configure do
     Bullet.rails_logger = true
     Bullet.add_footer = true
   end
-  
+
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
   config.action_mailer.smtp_settings = {:enable_starttls_auto => false}
 

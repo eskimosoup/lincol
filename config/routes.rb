@@ -16,11 +16,20 @@ Rails.application.routes.draw do
       get 'footer_form'
       get 'callback_form'
       get 'download_form'
+      get 'inpage_contact'
       post 'inpage_contact'
     end
   end
 
   mount Optimadmin::Engine => '/admin'
+
+  %w( 403 404 422 500 ).each do |code|
+    get code, to: 'errors#show', code: code
+  end
+
+  # This has to be the last route in your list
+  match "*path", to: "errors#show", via: :all, code: 404 unless Rails.application.config.consider_all_requests_local
+
   root to: 'application#index'
 end
 Optimadmin::Engine.routes.draw do

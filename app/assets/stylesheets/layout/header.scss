@@ -45,7 +45,7 @@ header {
   text-align: center;
   text-transform: uppercase;
   min-width: 310px;
-  margin: em(8px) 0 0;
+  margin: em(18px) 0 0;
 
   @media screen and (min-width: 480px) {
     background: image-url('layout/header/telephone-icon.png') no-repeat right center;
@@ -65,6 +65,10 @@ header {
     letter-spacing:  1px;
     padding: em(5px);
     width: 50%;
+
+    a {
+      color: $white;
+    }
   }
 
   @include responsive-to(small) {

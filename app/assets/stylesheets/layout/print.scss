@@ -1,0 +1,28 @@
+@media print {
+  header {
+    a[href]:after {
+      content: '';
+    }
+  }
+
+  .header-navigation,
+  .navigation.sidebar,
+  .industry-banner img,
+  footer,
+  .sticky-contact,
+  .breadcrumbs {
+    display: none;
+  }
+
+  .industry-banner {
+    min-height: initial;
+  }
+
+  .content-area .inner.padded {
+    padding: 10px;
+  }
+
+  .content-area .inner {
+    margin: 0;
+  }
+}
