@@ -42,7 +42,7 @@ $(document).on('click', '.industry-banner-control-link', function(e) {
 
     <div class="industry-banner-area">
       <div class="industry-banner-controls">
-        <%= render partial: 'industry_banners/industry_banner_control',
+        <%#= render partial: 'industry_banners/industry_banner_control',
             collection: BaseCollectionPresenter.new(collection: @industry.displayable_banners, view_template: self, presenter: IndustryBannerPresenter),
             as: :industry_banner_presenter
           %>

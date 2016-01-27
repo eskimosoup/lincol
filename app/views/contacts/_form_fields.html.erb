@@ -12,27 +12,27 @@
   </div>
 <% end %>
 <div class="field">
-  <%= f.text_field :name, placeholder: 'Name' %>
+  <%= f.text_field :name, placeholder: 'Name', id: "#{defined?(form) ? "#{form.parameterize}_" : ''}name" %>
 </div>
 
 <div class="field">
-  <%= f.text_field :email, placeholder: 'Email' %>
+  <%= f.text_field :email, placeholder: 'Email', id: "#{defined?(form) ? "#{form.parameterize}_" : ''}email" %>
 </div>
 
 <div class="field">
-  <%= f.text_field :company_name, placeholder: 'Company name' %>
+  <%= f.text_field :company_name, placeholder: 'Company name', id: "#{defined?(form) ? "#{form.parameterize}_" : ''}company_name" %>
 </div>
 
 <div class="field">
-  <%= f.text_field :telephone, placeholder: 'Telephone' %>
+  <%= f.text_field :telephone, placeholder: 'Telephone', id: "#{defined?(form) ? "#{form.parameterize}_" : ''}telephone" %>
 </div>
 
 <div class="field">
-  <%= f.text_area :message, placeholder: 'Message' %>
+  <%= f.text_area :message, placeholder: 'Message', id: "#{defined?(form) ? "#{form.parameterize}_" : ''}message" %>
 </div>
 
 <% if defined? form %>
-  <%= f.hidden_field :form, value: form %>
+  <%= f.hidden_field :form, value: form, id: "#{form.parameterize}_form" %>
 <% end %>
 
 <div class="actions">
