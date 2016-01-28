@@ -1,14 +1,27 @@
 <title><%= "#{@title} - " if @title %><%= global_site_settings['Name'] %></title>
 
-<meta name="description" content="<%= @meta_description %>" />
-<meta name="keywords"    content="<%= @meta_tags %>" />
+<%= content_tag :meta, name: 'description', content: @meta_description if @meta_description %>
+<%= content_tag :meta, name: 'keywords', content: @meta_tags if @meta_tags %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <%= stylesheet_link_tag    'application', media: 'all' %>
 <%= javascript_include_tag 'application' %>
 <%= csrf_meta_tags %>
 
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans:400,600,700,800:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
 
 <!--[if lt IE 9]>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

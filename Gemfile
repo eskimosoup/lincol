@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.2.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'therubyracer'
@@ -61,6 +61,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'optimadmin_generators', git: 'git@github.com:eskimosoup/optimadmin_generators.git', group: :development
-#gem 'optimadmin', git: 'git@github.com:eskimosoup/Optimadmin.git'
+gem 'optimadmin', git: 'git@github.com:eskimosoup/Optimadmin.git'
 gem 'friendly_id', '~> 5.1.0'
-gem 'optimadmin', path: '../optimadmin'
+#gem 'optimadmin', path: '../optimadmin'
