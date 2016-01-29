@@ -3,7 +3,9 @@ class ContactMailer < ActionMailer::Base
   def new(global_site_settings, contact)
     @site_settings = global_site_settings
     @contact = contact
-    mail to: @site_settings['Email'], subject: "#{@contact.form.present? ? @contact.form.humanize : 'Contact' } form completed - #{@site_settings['Name']}"
+    mail to: @site_settings['Email'],
+         from: 'noreply@optimised.today',
+         subject: "#{@contact.form.present? ? @contact.form.humanize : 'Contact' } form completed - #{@site_settings['Name']}"
   end
 
 end

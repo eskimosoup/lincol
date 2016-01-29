@@ -8,10 +8,20 @@ Rails.application.configure do
   end
 
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
-  config.action_mailer.smtp_settings = {:enable_starttls_auto => false}
+  #config.action_mailer.smtp_settings = {:enable_starttls_auto => false}
+
+  #ActionMailer::Base.delivery_method = :smtp
+  #ActionMailer::Base.smtp_settings = { address: 'mail.eskimosoup.co.uk', authentication: :plain, user_name: 'tasks@eskimosoup.co.uk', password: 'poipoip'}
+
+  config.action_mailer.smtp_settings = { enable_starttls_auto: false }
 
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = { address: 'mail.eskimosoup.co.uk', authentication: :plain, user_name: 'tasks@eskimosoup.co.uk', password: 'poipoip'}
+  ActionMailer::Base.smtp_settings = {
+    address: 'mail.optimised.today',
+    authentication: :plain,
+    user_name: 'noreply@optimised.today',
+    password: 'LudoStudio47#!poip​'
+  }
 
   config.generators do |g|
     g.assets false
