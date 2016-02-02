@@ -46,6 +46,10 @@
   <%= f.label :industry_id %><br>
   <%= f.select :industry_id, Industry.all.map{|x| [x.name, x.id]}, include_blank: 'No industry' %>
   </div>
+  <div class="field">
+<%= f.label :display %><br>
+<%= f.check_box :display %>
+</div>
           <% end %>
   </div>
 
