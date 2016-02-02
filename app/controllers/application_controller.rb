@@ -27,14 +27,20 @@ class ApplicationController < ActionController::Base
     @industries = BaseCollectionPresenter.new(collection: Industry.displayable, view_template: view_context, presenter: IndustryPresenter) unless @industry.present?
   end
 
+  def general_downloads
+    @static_page_menu_items = Optimadmin::Link.related_menu_items('General Information Download Centre', @industry.menu)
+    @additional_content = AdditionalContentPresenter.new(object: AdditionalContent.find_by(area: 'General Information Download Centre'), view_template: view_context)
+    @general_downloads = @unpresented_industry.general_downloads.displayable if @industry.present?
+  end
+
   private
 
     def load_industry
-      industry = Industry.displayable.find_by_subdomain(request.domain(3)) if Rails.env.production?
-      industry = Industry.displayable.find(3) if Rails.env.development?
+      @unpresented_industry = Industry.displayable.find_by_subdomain(request.domain(3)) if Rails.env.production?
+      @unpresented_industry = Industry.displayable.find(3) if Rails.env.development?
       #industry = Industry.displayable.find(7) if Rails.env.development?
-      if industry.present?
-        @industry = IndustryPresenter.new(object: industry, view_template: view_context)
+      if @unpresented_industry.present?
+        @industry = IndustryPresenter.new(object: @unpresented_industry, view_template: view_context)
         @header_menu = Optimadmin::Menu.new(name: @industry.menu)
       else
         @header_menu = Optimadmin::Menu.new(name: "header")

@@ -1,7 +1,8 @@
 class AdditionalContent < ActiveRecord::Base
   AREAS = [
               'Team Members index',
-              'Frequently Asked Questions index'
+              'Frequently Asked Questions index',
+              'General Information Download Centre'
             ]
 
 

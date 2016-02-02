@@ -29,6 +29,8 @@ module ApplicationHelper
         'callback_form'
       when 'download'
         'download_form'
+      when 'general_download'
+        'general_download_form'
       else
         'form'
       end

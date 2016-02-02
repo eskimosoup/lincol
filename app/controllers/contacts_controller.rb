@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_product, only: [:download_form, :create]
+  before_action :set_general_download, only: [:general_download_form, :create]
 
   def new
     @inpage_contact = Contact.new
@@ -21,6 +22,10 @@ class ContactsController < ApplicationController
   end
 
   def download_form
+    render layout: 'ajax'
+  end
+
+  def general_download_form
     render layout: 'ajax'
   end
 
@@ -64,5 +69,9 @@ class ContactsController < ApplicationController
 
     def set_product
       @product = ProductPresenter.new(object: Product.find(params[:id]), view_template: view_context) if params[:id].present?
+    end
+
+    def set_general_download
+      @product = GeneralDownloadPresenter.new(object: GeneralDownload.find(params[:general_download_id]), view_template: view_context) if params[:general_download_id].present?
     end
 end

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby "2.2.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
@@ -38,13 +37,13 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
   gem 'rspec-rails', '~> 3.0'
   gem "factory_girl_rails"
   gem 'shoulda-matchers'
 end
 
 group :development do
+  gem 'web-console', '~> 2.0'
   gem 'quiet_assets', '~> 1.1.0'
   gem 'guard-rspec', require: false
   gem 'rack-mini-profiler'

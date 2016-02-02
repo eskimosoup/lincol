@@ -31,6 +31,7 @@
         <%= module_link(model: Page, path: pages_path) %>
         <%= module_link(content: "Frequently Asked Questions", model: FrequentlyAskedQuestion, path: frequently_asked_questions_path) %>
         <%= module_link(content: "Additional Contents", model: AdditionalContent, path: additional_contents_path) %>
+        <%= module_link(content: "General Downloads", model: GeneralDownload, path: general_downloads_path) %>
 
         <% if can? :manage, Optimadmin::MenuItem %>
           <li><%= link_to 'Site Navigation', menu_items_path %></li>
