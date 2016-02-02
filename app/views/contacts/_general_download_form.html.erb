@@ -1,0 +1,42 @@
+<%= form_for @contact, url: contacts_path(general_download_id: params[:general_download_id]), remote: true do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize @contact.errors.count, 'error' %> prevented this message from being sent
+      </h2>
+
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :company_name, placeholder: 'Company name' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :telephone, placeholder: 'Telephone' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email, placeholder: 'Email' %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :message, value: "I am interested in downloading the '#{@product.title}' file from the General Information Download Centre." %>
+  </div>
+
+  <% if defined? form %>
+    <%= f.hidden_field :form, value: form %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Download File', class: 'light-submit-button' %>
+  </div>
+<% end %>
