@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160202143318) do
     t.string   "title",                      null: false
     t.string   "file",                       null: false
     t.string   "image",                      null: false
-    t.boolean  "display",     default: true, null: false
+    t.boolean  "display",     default: true
     t.integer  "industry_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
