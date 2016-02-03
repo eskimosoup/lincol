@@ -6,6 +6,6 @@ class AdditionalContent < ActiveRecord::Base
             ]
 
 
-  validates :content, presence: true
+  # validates :content, presence: true
   validates :area, uniqueness: true, presence: true
 end
