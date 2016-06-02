@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202143318) do
+ActiveRecord::Schema.define(version: 20160602104536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160202143318) do
   add_index "general_downloads", ["industry_id"], name: "index_general_downloads_on_industry_id", using: :btree
 
   create_table "industries", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",                             null: false
     t.string   "image"
     t.string   "colour"
     t.integer  "position"
@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 20160202143318) do
     t.integer  "link_id"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.boolean  "display",                     default: true,  null: false
   end
 
   add_index "optimadmin_menu_items", ["link_id"], name: "index_optimadmin_menu_items_on_link_id", using: :btree
