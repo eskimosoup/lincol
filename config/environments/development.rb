@@ -8,6 +8,8 @@ Rails.application.configure do
   end
 
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: 'www.lincol-oil.co.uk' }
+
   # config.action_mailer.smtp_settings = {:enable_starttls_auto => false}
 
   config.action_mailer.smtp_settings = { enable_starttls_auto: false }
